@@ -1,5 +1,11 @@
 # Rapyd
 
+# INSTALLATION SETUP
+__$ composer install__  
+__$ php artisan rapyd:theme:install__  
+__$ php artisan rapyd:module__  
+
+
 # HTML BASE FOR ADMIN SCAFFOLDING
 ## Vlogh 
 ### https://themeforest.net/item/volgh-admin-dashboard-html-template/24716170
