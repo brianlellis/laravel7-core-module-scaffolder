@@ -14,7 +14,6 @@ yarn-error.log
 
 # Rapyd
 /app/Rapyd/Modules/*
-/database/*
 
 # Generally Ignored App Files
 /storage
