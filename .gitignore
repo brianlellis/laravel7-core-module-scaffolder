@@ -16,7 +16,6 @@ yarn-error.log
 /app/Rapyd/Modules/*
 
 # Generally Ignored App Files
-/storage
 /public/images
 /public/ISSUED_BOND_FORMS
 /public/ISSUED_OVERLAYS
