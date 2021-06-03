@@ -22,7 +22,8 @@ yarn-error.log
 /public/ISSUED_BOND_FORMS
 /public/ISSUED_OVERLAYS
 /public/storage
-/vendor
+/vendor/*
+!/vendor/autoload.php
 /Tinker
 /resources
 

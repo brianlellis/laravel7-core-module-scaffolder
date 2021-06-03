@@ -10,9 +10,9 @@ use Validator;
  * https://github.com/symfony/process/blob/509ba166ae24c2227227c8ad54a3916bbd137422/Process.php#L1108
 **/
 
-class RapydModule extends Command
+class RapydTheme extends Command
 {
-  protected $signature    = 'rapyd:module {mod_mode=install}';
+  protected $signature    = 'rapyd:theme:install';
   protected $description  = 'Installs and/or configure Rapyd modules';
 
   public function __construct()
@@ -22,16 +22,26 @@ class RapydModule extends Command
 
   public function handle()
   {
-    if ($this->argument('mod_mode') === 'install') {
-      // Check if directory exists or make one
-      $dir = base_path().'/app/Rapyd/Modules';
-      if (!\File::isDirectory($dir)) {
-        \File::makeDirectory($dir, 0755, true);
-      }
-      self::cd_to_module_base();
-    } else {
-      $this->error(' Argument passed not valid for rapyd:module ');
+    // Check if directory exists or make one
+    $dir = base_path().'/resources';
+    if (!\File::isDirectory($dir)) {
+      \File::deleteDirectory($dir);
     }
+    
+    $config_data = [
+      'suretypedia',
+      'bondexchange',
+      'jet'
+    ];
+    foreach ($config_data as $idx => $module_install) {
+      $this->line("[{$idx}] {$vendor_name}/{$module_name}");
+    }
+
+    $module_install_quest = self::prompt_question(
+      'Which theme do you want to install?',
+      'theme_number',
+      ['required','integer','between:0,2']
+    );
   }
 
   /**
