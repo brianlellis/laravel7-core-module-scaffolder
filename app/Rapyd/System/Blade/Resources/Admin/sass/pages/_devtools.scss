@@ -1,0 +1,8 @@
+#page_devtools {
+  .widget_version {
+    display: none;
+  }
+  .widget_version.active {
+    display: block;
+  }
+}

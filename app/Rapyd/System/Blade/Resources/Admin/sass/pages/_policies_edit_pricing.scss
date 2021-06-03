@@ -1,0 +1,28 @@
+#page_bond_policies_edit {
+  #quote_table .not_selected {
+    opacity: 0.25;
+  }
+
+  #quote_table .is_selected {
+    font-weight: 700;
+  }
+
+  #quote_table tr td {
+    width: 20%;
+  }
+  #quote_table tr td:not(:first-child),
+  #quote_table th:not(:first-child) {
+    text-align: center;
+  }
+  #quote_table tr td:first-child {
+    /* box-shadow: 5px 0 10px rgba(0,0,0,0.3); */
+    border-right: 1px #CCC dotted;
+    font-weight: 700;
+    color: #666;
+  }
+  #person-pymt-wrapper,
+  #entity-pymt-wrapper, 
+  #cc-information-wrapper {
+    display: none;
+  }
+}

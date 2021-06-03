@@ -1,0 +1,87 @@
+#page_dashboard {
+  #summary_policy_blocks .statistics-info,
+  #summary_payment_blocks .statistics-info {
+    padding: 5px;
+  }
+
+  /* Agent Dashboard */
+  .agent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .agent .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 0px 0;
+  }
+  .agent .card-body {
+    display: flex;
+    align-items: stretch;
+    padding: 40px;
+  }
+  .agent .card-body .card {
+    width: 31%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5px;
+  }
+  .agent .card-body .card p {
+    font-size: 20px;
+    text-align: center;
+  }
+  .agent .card-body .card svg {
+    max-width: 100px;
+  }
+
+  @include breakpoint($bp_h_650) {
+    & .agent .card {
+      max-height: 430px;
+    }
+
+    & .agent .card-header {
+      & h1 {
+        font-size: 32px;
+      }
+
+      & h2 {
+        font-size: 25px;
+      }
+    }
+
+    & .agent .card-body {
+      padding: 10px;
+    }
+  }
+
+  // Mobile
+  @include breakpoint($bp-w-560) {
+    & .agent .card {
+      max-height: unset;
+    }
+
+    & .agent .card-header {
+      padding: 14px;
+
+      & h1 {
+        font-size: 27px;
+      }
+
+      & h2 {
+        font-size: 20px;
+      }
+    }
+
+    & .agent .card-body {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    & .agent .card-body .card {
+      width: 100%;
+    }
+  }
+}

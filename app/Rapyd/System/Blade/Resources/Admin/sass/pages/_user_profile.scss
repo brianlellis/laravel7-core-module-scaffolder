@@ -1,0 +1,134 @@
+#page_user_profile {
+  /* ADD A PAYMENT METHOD */
+  #credit_card_wrapper i.payment {
+    position: absolute !important;
+    right: 9% !important;
+    top: 51% !important;
+    width: 35px !important;
+  }
+
+  input:disabled:not([type="submit"]),
+  textarea:disabled,
+  select:disabled {
+    background: #fff !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+  select:disabled.form-control {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .edit_profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-group.view {
+    display: flex;
+    align-items: flex-start !important;
+  }
+
+  .form-group.view label {
+    white-space: nowrap;
+    font-weight: bold;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 5px !important;
+  }
+
+  .form-group.view label::after {
+    content: ":";
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  .checkbox_container {
+    display: flex;
+    align-items: center;
+  }
+
+  .userpic {
+    object-fit: cover;
+  }
+
+  @include breakpoint($bp_w_1280) {
+    & .form-group.view {
+      flex-direction: column;
+    }
+
+    & #modal-shareable-widget {
+      &.modal-full .form-group {
+        width: 90vw;
+        height: 90vh;
+        margin: 10vh auto;
+      }
+    }
+
+    & #col-left {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+    & #col-right {
+      flex: 0 0 65%;
+      max-width: 65%;
+    }
+  }
+
+  // Mobile
+  @include breakpoint(max-width 991px) {
+    & #modal-shareable-widget {
+      z-index: 9999;
+      &.modal-full .form-group {
+        width: 98vw;
+        height: 90vh;
+        margin: 10px auto;
+
+        & .content_area.row {
+          width: 100%;
+          height: 100%;
+          overflow-y: scroll;
+          background: white;
+
+          & .col-sm-4 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+          }
+          & .col-sm-8 {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            & h2 {
+              font-size: 24px;
+              text-align: center;
+            }
+
+            & p {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    & #btn-shareable-widget {
+      margin-bottom: 20px;
+    }
+    & #col-left {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    & #col-right {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}

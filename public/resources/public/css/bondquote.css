@@ -1,0 +1,1993 @@
+@charset "UTF-8";
+
+/*
+ ************ TYPOGRAPHY ***************
+*/
+
+/*
+ ************ COLORS ***************
+*/
+
+/*
+ ************ DIMENSIONS ***************
+*/
+
+/*
+ *********** BREAKPOINTS ***************
+*/
+
+/*
+  *********** Navbar Column Controller ***************
+*/
+
+#page_bondquote #bondquote-main .pika-single {
+  z-index: 9999;
+  position: relative;
+  color: #333;
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#page_bondquote #bondquote-main .pika-single:after,
+#page_bondquote #bondquote-main .pika-single:before {
+  content: " ";
+  display: table;
+}
+
+#page_bondquote #bondquote-main .pika-single:after {
+  clear: both;
+}
+
+#page_bondquote #bondquote-main .pika-single.is-hidden {
+  display: none;
+}
+
+#page_bondquote #bondquote-main .pika-single.is-bound {
+  position: absolute;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+#page_bondquote #bondquote-main .pika-lendar {
+  width: 23%;
+  margin: 1%;
+}
+
+#page_bondquote #bondquote-main .pika-title {
+  position: relative;
+  text-align: center;
+}
+
+#page_bondquote #bondquote-main .pika-label {
+  display: inline-block;
+  position: relative;
+  z-index: 9999;
+  overflow: hidden;
+  margin: 0;
+  padding: 5px 3px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  background-color: #fff;
+}
+
+#page_bondquote #bondquote-main .pika-title select {
+  cursor: pointer;
+  position: absolute;
+  z-index: 9998;
+  margin: 0;
+  left: 0;
+  top: 5px;
+  opacity: 0;
+}
+
+#page_bondquote #bondquote-main .pika-next,
+#page_bondquote #bondquote-main .pika-prev {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  width: 20px;
+  height: 30px;
+  text-indent: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 75% 75%;
+  opacity: 0.5;
+}
+
+#page_bondquote #bondquote-main .pika-next:hover,
+#page_bondquote #bondquote-main .pika-prev:hover {
+  opacity: 1;
+}
+
+#page_bondquote #bondquote-main .is-rtl .pika-next,
+#page_bondquote #bondquote-main .pika-prev {
+  float: left;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==");
+}
+
+#page_bondquote #bondquote-main .is-rtl .pika-prev,
+#page_bondquote #bondquote-main .pika-next {
+  float: right;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=");
+}
+
+#page_bondquote #bondquote-main .pika-next.is-disabled,
+#page_bondquote #bondquote-main .pika-prev.is-disabled {
+  cursor: default;
+  opacity: 0.2;
+}
+
+#page_bondquote #bondquote-main .pika-select {
+  display: inline-block;
+}
+
+#page_bondquote #bondquote-main .pika-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+}
+
+#page_bondquote #bondquote-main .pika-table td,
+#page_bondquote #bondquote-main .pika-table th {
+  width: 14.2857142857%;
+  padding: 0;
+}
+
+#page_bondquote #bondquote-main .pika-table th {
+  color: #999;
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#page_bondquote #bondquote-main .pika-button {
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  padding: 5px;
+  color: #666;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  background: #f5f5f5;
+}
+
+#page_bondquote #bondquote-main .pika-week {
+  font-size: 11px;
+  color: #999;
+}
+
+#page_bondquote #bondquote-main .is-today .pika-button {
+  color: #3af;
+  font-weight: 700;
+}
+
+#page_bondquote #bondquote-main .has-event .pika-button,
+#page_bondquote #bondquote-main .is-selected .pika-button {
+  color: #fff;
+  font-weight: 700;
+  background: #3af;
+  box-shadow: inset 0 1px 3px #178fe5;
+  border-radius: 3px;
+}
+
+#page_bondquote #bondquote-main .has-event .pika-button {
+  background: #005da9;
+  box-shadow: inset 0 1px 3px #0076c9;
+}
+
+#page_bondquote #bondquote-main .is-disabled .pika-button,
+#page_bondquote #bondquote-main .is-inrange .pika-button {
+  background: #d5e9f7;
+}
+
+#page_bondquote #bondquote-main .is-startrange .pika-button {
+  color: #fff;
+  background: #6cb31d;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+#page_bondquote #bondquote-main .is-endrange .pika-button {
+  color: #fff;
+  background: #3af;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+#page_bondquote #bondquote-main .is-disabled .pika-button {
+  pointer-events: none;
+  cursor: default;
+  color: #999;
+  opacity: 0.3;
+}
+
+#page_bondquote #bondquote-main .is-outside-current-month .pika-button {
+  color: #999;
+  opacity: 0.3;
+}
+
+#page_bondquote #bondquote-main .is-selection-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+#page_bondquote #bondquote-main .pika-button:hover,
+#page_bondquote #bondquote-main .pika-row.pick-whole-week:hover .pika-button {
+  color: #fff;
+  background: #ff8000;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+#page_bondquote #bondquote-main .pika-table abbr {
+  border-bottom: none;
+  cursor: help;
+}
+
+#page_bondquote #bondquote-main .pika-lendar .pika-next.is-disabled,
+#page_bondquote #bondquote-main .pika-lendar .pika-prev.is-disabled {
+  display: none;
+}
+
+#page_bondquote #bondquote-main .pika-lendar button.pika-button.pika-day.is-active span {
+  display: none;
+}
+
+#page_bondquote #bondquote-main .pika-lendar .pika-row .is-selected .pika-button.pika-day {
+  color: black;
+}
+
+#page_bondquote #bondquote-main table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+#page_bondquote #bondquote-main table thead {
+  background: #f8f8f8;
+  color: #0a0a0a;
+}
+
+#page_bondquote #bondquote-main table tbody,
+#page_bondquote #bondquote-main table tfoot,
+#page_bondquote #bondquote-main table thead {
+  border: 1px solid #f1f1f1;
+  background-color: #fefefe;
+}
+
+#page_bondquote #bondquote-main table tbody tr,
+#page_bondquote #bondquote-main table tfoot tr,
+#page_bondquote #bondquote-main table thead tr {
+  background: 0 0;
+}
+
+#page_bondquote #bondquote-main table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+#page_bondquote #bondquote-main .pika-lendar tbody tr:nth-child(odd),
+#page_bondquote #bondquote-main .pika-lendar tbody tr:nth-child(odd) td,
+#page_bondquote #bondquote-main .pika-lendar tbody tr:nth-child(odd) td button {
+  background: #fff;
+}
+
+#page_bondquote #bondquote-main .pika-lendar tbody tr:nth-child(even),
+#page_bondquote #bondquote-main .pika-lendar tbody tr:nth-child(even) td,
+#page_bondquote #bondquote-main .pika-lendar tbody tr:nth-child(even) td button {
+  background: #eee;
+}
+
+#page_bondquote #bondquote-main .pika-lendar tbody tr td button {
+  border: 0;
+  box-shadow: none;
+}
+
+#page_bondquote #bondquote-main .pika-lendar .pika-table th {
+  background: #eee;
+}
+
+#page_bondquote #bondquote-main .pika-lendar .pika-table th abbr {
+  text-decoration: none;
+  pointer-events: none;
+  color: #333;
+  font-weight: 400;
+}
+
+#page_bondquote #bondquote-main .pika-lendar .pika-title .pika-label {
+  font-weight: 300;
+}
+
+@media (max-width: 810px) {
+  #page_bondquote #bondquote-main .pika-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #page_bondquote #bondquote-main .pika-lendar {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 75%, 100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 75%, 100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+}
+
+#page_bondquote {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#page_bondquote ul#bondquote-main {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex: 1;
+}
+
+#page_bondquote li.spa-page {
+  max-width: 900px;
+  margin: 60px auto;
+  transition: all 300ms;
+  display: none;
+  background: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.01), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  min-height: 400px;
+  padding: 20px;
+  position: relative;
+  border: 1px solid rgba(153, 153, 153, 0.3);
+}
+
+#page_bondquote li.spa-page#page-14a-summary {
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+#page_bondquote li.spa-page#page-14a-summary #dateContainer {
+  width: 95%;
+}
+
+#page_bondquote li.spa-page.active {
+  display: block;
+  -webkit-animation: fade-in 700ms ease;
+          animation: fade-in 700ms ease;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#page_bondquote li.spa-page:after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  border-radius: 50%;
+  left: 0;
+  bottom: -50px;
+  box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+}
+
+#page_bondquote #spa-arrow-prev {
+  left: 0;
+  width: 50px;
+  height: 80px;
+  background: #238FE7;
+  padding: 0;
+  line-height: 35px;
+  position: fixed;
+  top: 39%;
+  cursor: pointer;
+  display: none;
+  transition: all 300ms;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(21, 21, 21, 0.09), 0 1px 2px rgba(21, 21, 21, 0.1);
+}
+
+#page_bondquote #spa-arrow-prev:before {
+  content: "";
+  border: 1px solid white;
+  border-right: none;
+  border-top: none;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  transform: rotate(45deg);
+  margin: 25px 15px;
+}
+
+#page_bondquote #spa-arrow-prev:hover {
+  box-shadow: 0 3px 6px rgba(21, 21, 21, 0.16), 0 3px 6px rgba(21, 21, 21, 0.23);
+}
+
+#page_bondquote h1 {
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+#page_bondquote p {
+  font-size: 20px;
+}
+
+#page_bondquote ul#bondquote-main input,
+#page_bondquote ul#bondquote-main select {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  border-radius: 1px;
+  padding: 5px;
+  position: relative;
+  margin: 20px auto;
+  max-width: unset;
+  font-size: 20px;
+  background: #FBFBFB;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  outline: none;
+}
+
+#page_bondquote ul#bondquote-main input#biznameinput,
+#page_bondquote ul#bondquote-main select#biznameinput {
+  max-width: 500px;
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+
+#page_bondquote ul#bondquote-main input.error,
+#page_bondquote ul#bondquote-main select.error {
+  border: 1px solid #ee5c53;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button),
+#page_bondquote ul#bondquote-main .blue-card {
+  font-size: 24px;
+  border: none;
+  padding: 15px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 1px;
+  color: white;
+  margin: 0 5px;
+  margin-top: 40px;
+  cursor: pointer;
+  outline: none;
+  transition: all 300ms;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).yes,
+#page_bondquote ul#bondquote-main .blue-card.yes {
+  background: #78c339;
+  min-width: 300px;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).no,
+#page_bondquote ul#bondquote-main .blue-card.no {
+  background: #ee5c53;
+  min-width: 300px;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button) span,
+#page_bondquote ul#bondquote-main .blue-card span {
+  pointer-events: none;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).blue-card,
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button,
+#page_bondquote ul#bondquote-main button:not(.pika-button).blue-button,
+#page_bondquote ul#bondquote-main .blue-card.blue-card,
+#page_bondquote ul#bondquote-main .blue-card.continue-button,
+#page_bondquote ul#bondquote-main .blue-card.blue-button {
+  background: #238FE7;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).blue-card p,
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button p,
+#page_bondquote ul#bondquote-main button:not(.pika-button).blue-button p,
+#page_bondquote ul#bondquote-main .blue-card.blue-card p,
+#page_bondquote ul#bondquote-main .blue-card.continue-button p,
+#page_bondquote ul#bondquote-main .blue-card.blue-button p {
+  font-size: 30px;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button,
+#page_bondquote ul#bondquote-main .blue-card.continue-button {
+  min-width: 350px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button span,
+#page_bondquote ul#bondquote-main .blue-card.continue-button span {
+  display: none;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button.loading,
+#page_bondquote ul#bondquote-main .blue-card.continue-button.loading {
+  background: #999;
+  pointer-events: none;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button.loading span,
+#page_bondquote ul#bondquote-main .blue-card.continue-button.loading span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button.loading span:nth-child(1),
+#page_bondquote ul#bondquote-main .blue-card.continue-button.loading span:nth-child(1) {
+  -webkit-animation: bounce 1s ease-in-out infinite;
+          animation: bounce 1s ease-in-out infinite;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button.loading span:nth-child(2),
+#page_bondquote ul#bondquote-main .blue-card.continue-button.loading span:nth-child(2) {
+  -webkit-animation: bounce 1s ease-in-out 0.33s infinite;
+          animation: bounce 1s ease-in-out 0.33s infinite;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button).continue-button.loading span:nth-child(3),
+#page_bondquote ul#bondquote-main .blue-card.continue-button.loading span:nth-child(3) {
+  -webkit-animation: bounce 1s ease-in-out 0.66s infinite;
+          animation: bounce 1s ease-in-out 0.66s infinite;
+}
+
+#page_bondquote ul#bondquote-main button:not(.pika-button):hover,
+#page_bondquote ul#bondquote-main .blue-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#page_bondquote #government-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#page_bondquote #government-wrapper button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 260px;
+  width: 31%;
+  margin: 1%;
+}
+
+#page_bondquote #government-wrapper button svg {
+  fill: #FBFBFB;
+  height: 150px;
+}
+
+#page_bondquote .select_wrapper {
+  line-height: 36px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  #page_bondquote .select_wrapper {
+    width: 98%;
+  }
+}
+
+#page_bondquote .select_wrapper:hover {
+  background: none;
+}
+
+#page_bondquote .select_wrapper .selectStyle-value {
+  background: #f5f5f5 url("https://image.flaticon.com/icons/svg/118/118738.svg") no-repeat top 15px right 12px;
+  background-size: 15px;
+  display: block;
+  margin: 0;
+  padding: 5px 10px;
+  transition: 0.4s ease;
+  z-index: 9;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+#page_bondquote .select_wrapper.openSelect .selectStyle-value {
+  display: block;
+  border-radius: 0;
+  margin: 0;
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  background: #238fe7;
+  color: #fff;
+  font-size: 2rem;
+}
+
+#page_bondquote .select_wrapper .error {
+  border: 2px solid rgba(238, 92, 83, 0.5);
+}
+
+#page_bondquote .select_wrapper .select_inner {
+  background: #fff;
+  color: #aaa;
+  display: none;
+  position: absolute;
+  padding-left: 0;
+  left: 0;
+  top: 47px;
+  width: 100%;
+  margin-left: auto;
+  list-style: none;
+  height: 300px;
+  overflow: scroll;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  z-index: 20;
+}
+
+#page_bondquote .select_wrapper .select_inner li {
+  font-size: 18px;
+  border-bottom: 1px solid rgba(68, 68, 68, 0.1);
+  padding: 3px 0;
+  transition: all 300ms;
+}
+
+#page_bondquote .select_wrapper .select_inner li:hover {
+  background: rgba(68, 68, 68, 0.04);
+  color: #444444;
+  box-shadow: 0px 3px 6px rgba(21, 21, 21, 0.06);
+}
+
+@media (max-width: 768px) {
+  #page_bondquote .select_wrapper .select_inner {
+    height: 200px;
+  }
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner {
+  background: #fff;
+  color: #aaa;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 47px;
+  width: 100%;
+  margin-left: auto;
+  list-style: none;
+  height: 300px;
+  overflow: scroll;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner li {
+  border-bottom: 1px solid #eee;
+  padding: 5px 15px;
+  margin: 0;
+  transition: 100ms;
+  display: block;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover {
+  box-shadow: none;
+  background: white;
+  color: #333;
+  padding: 4px 0;
+  font-size: 1.75rem;
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover + li:after,
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover + li:before,
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover:after,
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover:before {
+  content: "";
+  width: 100%;
+  left: 0;
+  position: absolute;
+  background: #238fe7;
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #006eb2 0%, #238fe7 70%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  height: 2px;
+  top: 0;
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover + li:after,
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover + li:before {
+  background: #238fe7;
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to top, #238fe7 30%, #006eb2 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  top: -2px;
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover ul {
+  border-radius: 5px;
+  background: #fff;
+}
+
+#page_bondquote .select_wrapper .select_wrapper .select_inner li:hover li:first-child {
+  display: none;
+}
+
+#page_bondquote label {
+  text-align: left;
+  font-weight: 400;
+}
+
+#page_bondquote .bond-amount-group {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#page_bondquote .bond-amount-group .svg_phone svg {
+  width: 25px;
+  margin-right: 10px;
+}
+
+#page_bondquote .bond-amount-group p {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+#page_bondquote #page-09d-basicinfo .phone-input {
+  display: flex;
+  max-width: 280px;
+  margin: 40px auto;
+  position: relative;
+}
+
+#page_bondquote #page-09d-basicinfo .phone-input.formatted::before {
+  content: "";
+}
+
+#page_bondquote #page-09d-basicinfo .phone-input::before {
+  content: "(\A0\A0\A0\A0\A0\A0) \A0\A0\A0\A0\A0\A0    -";
+  position: absolute;
+  z-index: 22;
+  top: 24px;
+  left: 42px;
+  font-size: 22px;
+  text-align: left;
+  font-weight: 300;
+  pointer-events: none;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+#page_bondquote #page-09d-basicinfo .phone-input .svg_phone {
+  width: 30px;
+  margin-right: 10px;
+  margin-top: -5px;
+}
+
+#page_bondquote #page-09d-basicinfo .phone-input .svg_phone svg {
+  width: 100%;
+  fill: rgba(51, 51, 51, 0.8);
+}
+
+#page_bondquote #page-09d-basicinfo .phone-input #custphone-input {
+  flex: 1;
+  padding-left: 8px;
+  margin: 20px auto;
+}
+
+#page_bondquote .twitter-typeahead {
+  display: block !important;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#page_bondquote .twitter-typeahead #bondlist-autocomplete {
+  width: 100% !important;
+  max-width: 600px !important;
+  margin: 10px 0 !important;
+  margin-top: 30px !important;
+}
+
+#page_bondquote .twitter-typeahead .tt-hint {
+  margin: 30px 0 !important;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  right: 0;
+  z-index: 100;
+  overflow-y: scroll;
+  max-height: 400px;
+  background: #FBFBFB;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+#page_bondquote .twitter-typeahead .tt-menu::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid #FBFBFB;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  border-radius: 1px;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable p {
+  pointer-events: none;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable b,
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable .tt-highlight {
+  font-weight: 400;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable .tt-highlight {
+  color: #238FE7;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable .limit-obligee {
+  display: flex;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable .limit-obligee span {
+  flex: 1;
+  margin-left: 10px;
+}
+
+#page_bondquote .twitter-typeahead .tt-menu .tt-selectable:not(:last-child) {
+  border-bottom: 1px solid rgba(68, 68, 68, 0.2);
+}
+
+#page_bondquote #bond_selector_list,
+#page_bondquote #bond_sub_selector_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+#page_bondquote #bond_selector_list::-webkit-scrollbar,
+#page_bondquote #bond_sub_selector_list::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+#page_bondquote #bond_selector_list::-webkit-scrollbar-thumb,
+#page_bondquote #bond_sub_selector_list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+#page_bondquote #bond_selector_list .bond_selector_ele,
+#page_bondquote #bond_sub_selector_list .bond_selector_ele {
+  width: 23%;
+  margin: 1%;
+  padding: 5px;
+  background: #238FE7;
+  color: #FBFBFB;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-wrap: anywhere;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+#page_bondquote #bond_selector_list .bond_selector_ele:hover,
+#page_bondquote #bond_sub_selector_list .bond_selector_ele:hover {
+  background: #105994;
+}
+
+#page_bondquote #bizyears_wrapper,
+#page_bondquote .dishonesty_container,
+#page_bondquote #biztype_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#page_bondquote #bizyears_wrapper button,
+#page_bondquote .dishonesty_container button,
+#page_bondquote #biztype_wrapper button {
+  width: 23%;
+  margin: 1%;
+  min-width: unset;
+}
+
+#page_bondquote #bizservice_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#page_bondquote #bizservice_wrapper .blue-card {
+  width: 31.33%;
+  min-width: unset;
+}
+
+#page_bondquote #policy_application_upload {
+  cursor: pointer;
+  height: 150px;
+  width: 200px;
+  position: relative;
+  border: 4px solid #ffffff;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #2590eb 50%, #ffffff 50%);
+  background-size: 100% 200%;
+  transition: all 500ms;
+  color: #ffffff;
+  font-size: 100px;
+  margin: auto;
+  display: inline-block;
+}
+
+#page_bondquote #policy_application_upload:hover {
+  background-position: 0 -100%;
+  color: #238fe7;
+  border-color: #238fe7;
+}
+
+#page_bondquote #policy_application_upload p {
+  font-size: 16px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: auto;
+  position: absolute;
+}
+
+#page_bondquote #policy_application_upload input[type=file] {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#page_bondquote #policy_application_upload svg {
+  width: 100px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -10px;
+  margin: auto;
+  position: absolute;
+  display: none;
+}
+
+#page_bondquote #policy_application_upload svg g {
+  fill: #fff;
+}
+
+#page_bondquote #policy_application_upload:hover svg .cls-1 {
+  fill: #238fe7;
+}
+
+#page_bondquote #policy_application_upload.upload_sucessful {
+  background: #78c339;
+}
+
+#page_bondquote #policy_application_upload.upload_sucessful p {
+  display: none;
+}
+
+#page_bondquote #policy_application_upload.upload_sucessful svg {
+  display: block;
+}
+
+#page_bondquote #download_policy_application {
+  height: 150px;
+  width: 200px;
+  position: relative;
+  cursor: pointer;
+  border: 4px solid #ffffff;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #2590eb 50%, #ffffff 50%);
+  background-size: 100% 200%;
+  transition: all 500ms;
+  color: #ffffff;
+  font-size: 20px;
+  margin: auto;
+  margin-right: 20px;
+  padding-top: 30px;
+  text-align: center;
+  display: inline-block;
+}
+
+#page_bondquote #driver-license svg {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#page_bondquote #page-27-payment-credit-card form,
+#page_bondquote #page-27-payment-agency-bill form {
+  max-width: 800px;
+  margin: 0 auto;
+  border: none;
+}
+
+#page_bondquote #page-27-payment-credit-card form .credit_card,
+#page_bondquote #page-27-payment-agency-bill form .credit_card {
+  position: relative;
+}
+
+#page_bondquote #page-27-payment-credit-card form .credit_card input#card-number.paymentError,
+#page_bondquote #page-27-payment-credit-card form .credit_card input#agent-card-number.paymentError,
+#page_bondquote #page-27-payment-agency-bill form .credit_card input#card-number.paymentError,
+#page_bondquote #page-27-payment-agency-bill form .credit_card input#agent-card-number.paymentError {
+  border: 1px solid #ee5c53;
+}
+
+#page_bondquote #page-27-payment-credit-card form .expiration,
+#page_bondquote #page-27-payment-agency-bill form .expiration {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#page_bondquote #page-27-payment-credit-card form .expiration label,
+#page_bondquote #page-27-payment-agency-bill form .expiration label {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#page_bondquote #page-27-payment-credit-card form .expiration .select_wrapper,
+#page_bondquote #page-27-payment-agency-bill form .expiration .select_wrapper {
+  width: 49%;
+}
+
+#page_bondquote #page-27-payment-credit-card form .expiration .select_wrapper .select_wrapper,
+#page_bondquote #page-27-payment-agency-bill form .expiration .select_wrapper .select_wrapper {
+  width: 100%;
+}
+
+#page_bondquote #page-27-payment-credit-card form label,
+#page_bondquote #page-27-payment-agency-bill form label {
+  font-weight: 400;
+}
+
+#page_bondquote #page-27-payment-credit-card form button#cardSubmit,
+#page_bondquote #page-27-payment-credit-card form button#agencyCardSubmit,
+#page_bondquote #page-27-payment-agency-bill form button#cardSubmit,
+#page_bondquote #page-27-payment-agency-bill form button#agencyCardSubmit {
+  width: 100%;
+  margin: 0 1%;
+}
+
+#page_bondquote #page-27-payment-credit-card form .row,
+#page_bondquote #page-27-payment-agency-bill form .row {
+  display: flex;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group,
+#page_bondquote #page-27-payment-agency-bill form .form-group {
+  margin: 0 1%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group label,
+#page_bondquote #page-27-payment-agency-bill form .form-group label {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group input,
+#page_bondquote #page-27-payment-credit-card form .form-group select,
+#page_bondquote #page-27-payment-agency-bill form .form-group input,
+#page_bondquote #page-27-payment-agency-bill form .form-group select {
+  margin: 0 !important;
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  border-radius: 4px;
+  padding: 8px 5px;
+  position: relative;
+  margin: 20px auto;
+  max-width: unset;
+  font-size: 18px;
+  background: #fff;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group input.error,
+#page_bondquote #page-27-payment-credit-card form .form-group select.error,
+#page_bondquote #page-27-payment-agency-bill form .form-group input.error,
+#page_bondquote #page-27-payment-agency-bill form .form-group select.error {
+  border: 1px solid #ee5c53;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group-row,
+#page_bondquote #page-27-payment-agency-bill form .form-group-row {
+  flex-direction: row;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group.flex-2,
+#page_bondquote #page-27-payment-agency-bill form .form-group.flex-2 {
+  flex: 2;
+}
+
+#page_bondquote #page-27-payment-credit-card form .form-group.flex-1,
+#page_bondquote #page-27-payment-agency-bill form .form-group.flex-1 {
+  flex: 1;
+}
+
+#page_bondquote #page-27-payment-credit-card form .error-heading,
+#page_bondquote #page-27-payment-agency-bill form .error-heading {
+  display: none;
+}
+
+#page_bondquote #page-27-payment-credit-card form #billing_map,
+#page_bondquote #page-27-payment-agency-bill form #billing_map {
+  display: none;
+}
+
+#page_bondquote #page-28-bond-issued-confirmation .button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#page_bondquote #page-28-bond-issued-confirmation .blue-card.issuance-end-buttons,
+#page_bondquote #page-28-bond-issued-confirmation .blue-card.issuance-dashboard-button {
+  display: inline-block;
+  margin: 1%;
+  margin-bottom: 20px;
+  width: 23%;
+  min-width: 250px;
+}
+
+#page_bondquote #page-28-bond-issued-confirmation .blue-card.issuance-end-buttons:hover,
+#page_bondquote #page-28-bond-issued-confirmation .blue-card.issuance-dashboard-button:hover {
+  text-decoration: none;
+}
+
+#page_bondquote #page-28-bond-issued-confirmation iframe {
+  width: 800px;
+  height: 300px;
+  position: absolute;
+  z-index: -1;
+}
+
+#page_bondquote #page-15-quote .quote_purchase_options_box {
+  display: none;
+}
+
+#page_bondquote #page-15-quote #bond_quote_selector_list {
+  align-items: stretch;
+}
+
+#page_bondquote #page-15-quote #bond_quote_selector_list .quote_options .quote_selector_ele {
+  pointer-events: none;
+}
+
+#page_bondquote #page-15-quote #bond_quote_selector_list .quote_options .quote_selector_ele.installments {
+  display: none;
+}
+
+#page_bondquote #page-15-quote #bond_quote_selector_list .quote_options .quote_selector_ele .buy-now,
+#page_bondquote #page-15-quote #bond_quote_selector_list .quote_options .quote_selector_ele .see_options_quote {
+  display: none;
+}
+
+#page_bondquote #page-15-quote #bond_quote_selector_list .quote_options .quote_selector_ele .installments_available {
+  display: block;
+}
+
+#page_bondquote .quote_purchase_options_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+#page_bondquote .quote_purchase_options_box.no_display {
+  display: none;
+}
+
+#page_bondquote .quote_purchase_options_box .quote_wrap {
+  display: flex;
+  padding-top: 8vh;
+  padding-bottom: 3vh;
+  width: 90%;
+  margin: auto;
+}
+
+#page_bondquote .quote_purchase_options_box .quote_wrap .option_label {
+  background: #999999;
+  text-transform: uppercase;
+  color: #FBFBFB;
+  background: #238FE7;
+  margin-bottom: 5vh !important;
+}
+
+#page_bondquote .quote_purchase_options_box .quote_wrap .buy-now {
+  max-width: 85% !important;
+}
+
+#page_bondquote .quote_purchase_options_box .quotelist_selection_options_close {
+  background: #999999 !important;
+  font-size: 18px !important;
+  padding: 10px !important;
+  min-width: 290px !important;
+}
+
+#page_bondquote #bond_quote_selector_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options {
+  flex: 1;
+  margin: 0 1%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options p {
+  line-height: 2;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .terms {
+  background: #444444;
+  color: #FBFBFB;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .terms p {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees {
+  padding: 10px;
+  text-align: left;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees .head {
+  text-align: center;
+  font-size: 14px;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table {
+  font-size: 16px;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table tbody,
+#page_bondquote #bond_quote_selector_list .quote_options .fees table tfoot {
+  background: transparent;
+  border: none;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table tr {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table th {
+  padding-left: 5px;
+  text-align: left;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table th {
+  flex: 1;
+  text-align: right;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table td {
+  flex: 1;
+  font-weight: 400;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table tfoot {
+  border-top: 1px dashed rgba(68, 68, 68, 0.2);
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .fees table tfoot tr {
+  padding-top: 10px;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .installments_available {
+  display: none;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele {
+  flex: 1;
+  padding: 5px;
+  cursor: pointer;
+  color: #444444;
+  transition: all 300ms;
+  display: flex;
+  flex-direction: column;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele:last-child {
+  border-top: unset;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele p {
+  pointer-events: none;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele p:nth-child(3) {
+  flex: 1;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele .buy-now,
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele .see_options_quote {
+  background: #238FE7;
+  color: #FBFBFB;
+  max-width: 200px;
+  margin: 10px auto;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 200ms;
+  width: 100%;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele.not_offered {
+  pointer-events: none;
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele:hover {
+  box-shadow: inset 0 2px 10px 0 rgba(68, 68, 68, 0.2);
+}
+
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele:hover .buy-now,
+#page_bondquote #bond_quote_selector_list .quote_options .quote_selector_ele:hover .see_options_quote {
+  box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.5);
+  background: #1574c2;
+}
+
+#page_bondquote .address_form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#page_bondquote #cust_biz_map,
+#page_bondquote #cust_mail_map,
+#page_bondquote #principal_address_map,
+#page_bondquote #cust_delivery_map {
+  max-width: 670px;
+  margin: 0 auto;
+}
+
+#page_bondquote #address_delivery_select {
+  display: flex;
+  justify-content: center;
+}
+
+#page_bondquote #address_delivery_select button {
+  font-size: 20px;
+  width: 100%;
+  max-width: 33.333%;
+  padding: 0 !important;
+  border-radius: 5px !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page_bondquote #address_delivery_select button .title {
+  padding: 10px;
+  background: #444444;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.4;
+}
+
+#page_bondquote #address_delivery_select button .address {
+  min-height: 100px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 20px 5px;
+}
+
+#page_bondquote #address_delivery_select button .diff_addresss {
+  flex: 1;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page_bondquote #page-08b-principalcheck .email-template input,
+#page_bondquote #page-19-sendemail .email-template input {
+  max-width: 500px;
+}
+
+#page_bondquote #page-08b-principalcheck .preview-btn,
+#page_bondquote #page-19-sendemail .preview-btn {
+  cursor: pointer;
+  font-size: 18px;
+  color: #238FE7;
+  text-decoration: underline;
+  margin: 30px 0;
+}
+
+#page_bondquote #page-08b-principalcheck .email_preview,
+#page_bondquote #page-19-sendemail .email_preview {
+  display: none;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 22;
+  max-width: 900px;
+  padding: 20px;
+  background: white;
+  text-align: left;
+  box-shadow: 0px 3px 6px rgba(21, 21, 21, 0.06);
+  border-radius: 3px;
+}
+
+#page_bondquote #page-08b-principalcheck .email_preview p,
+#page_bondquote #page-19-sendemail .email_preview p {
+  line-height: 1.5;
+}
+
+#page_bondquote #page-08b-principalcheck .email_preview .blue-button,
+#page_bondquote #page-19-sendemail .email_preview .blue-button {
+  background: #238FE7;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(21, 21, 21, 0.09), 0 1px 2px rgba(21, 21, 21, 0.1);
+  border-radius: 3px;
+}
+
+#page_bondquote #page-08b-principalcheck .email_preview .close-btn,
+#page_bondquote #page-19-sendemail .email_preview .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #444444;
+  color: #FBFBFB;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#page_bondquote .loading_overlay {
+  display: none;
+  position: relative;
+}
+
+#page_bondquote .loading .loading_overlay {
+  display: block;
+}
+
+#page_bondquote .loading .loading_overlay .animation {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+#page_bondquote .loading .loading_overlay .animation span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #fff;
+  margin: 35px 2px;
+  opacity: 0;
+}
+
+#page_bondquote .loading .loading_overlay .animation span:nth-child(1) {
+  -webkit-animation: opacitychange 1s ease-in-out infinite;
+          animation: opacitychange 1s ease-in-out infinite;
+}
+
+#page_bondquote .loading .loading_overlay .animation span:nth-child(2) {
+  -webkit-animation: opacitychange 1s ease-in-out 0.33s infinite;
+          animation: opacitychange 1s ease-in-out 0.33s infinite;
+}
+
+#page_bondquote .loading .loading_overlay .animation span:nth-child(3) {
+  -webkit-animation: opacitychange 1s ease-in-out 0.66s infinite;
+          animation: opacitychange 1s ease-in-out 0.66s infinite;
+}
+
+@-webkit-keyframes opacitychange {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacitychange {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    opacity: 1;
+  }
+}
+
+#page_bondquote .agreement_terms {
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 10px 20px;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+#page_bondquote .agreement_terms p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#page_bondquote .agreement_terms::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+#page_bondquote .agreement_terms::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+#page_bondquote #bond-modal-exit {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(21, 21, 21, 0.6);
+  flex-direction: column;
+  justify-content: center;
+}
+
+#page_bondquote #bond-modal-exit.active {
+  display: flex;
+}
+
+#page_bondquote #bond-modal-exit .container {
+  background: #FBFBFB;
+  padding: 40px 20px;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 2px;
+  margin-top: -13%;
+}
+
+#page_bondquote #bond-modal-exit h2 {
+  margin: 0;
+  font-size: 30px;
+  color: #ee5c53;
+}
+
+#page_bondquote #bond-modal-exit p {
+  font-size: 18px;
+}
+
+#page_bondquote #bond-modal-exit .options button {
+  border: 0;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 8px 30px;
+  color: #FBFBFB;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(21, 21, 21, 0.09), 0 1px 2px rgba(21, 21, 21, 0.1);
+  margin: 0 5px;
+}
+
+#page_bondquote #bond-modal-exit .options button.yes {
+  background: #78c339;
+}
+
+#page_bondquote #bond-modal-exit .options button.no {
+  background: #ee5c53;
+}
+
+#page_bondquote .dishonesty_custom_employees {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page_bondquote .dishonesty_custom_employees input#number_of_employees {
+  max-width: 320px;
+  margin-top: 20px;
+}
+
+#page_bondquote .dishonesty_custom_employees button.blue-card {
+  min-width: 250px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1030px) {
+  #page_bondquote ul#bondquote-main {
+    padding: 0 20px;
+  }
+
+  #page_bondquote ul#bondquote-main #address_delivery_select {
+    flex-wrap: wrap;
+  }
+
+  #page_bondquote ul#bondquote-main #address_delivery_select button {
+    max-width: 100%;
+  }
+
+  #page_bondquote ul#bondquote-main #address_delivery_select button .diff_addresss {
+    padding: 40px 10px;
+  }
+
+  #page_bondquote #spa-arrow-prev {
+    width: 30px;
+    height: 30px;
+    line-height: 10px;
+    top: 75px;
+    z-index: 40;
+  }
+
+  #page_bondquote #spa-arrow-prev:before {
+    height: 15px;
+    width: 15px;
+    margin: 8px 10px;
+  }
+
+  #page_bondquote #address_delivery_select button .title {
+    padding: 10px;
+    min-height: unset;
+  }
+
+  #page_bondquote #address_delivery_select button .address {
+    min-height: unset;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #page_bondquote h1 {
+    font-size: 24px;
+  }
+
+  #page_bondquote ul#bondquote-main input,
+  #page_bondquote ul#bondquote-main select {
+    margin: 5px;
+  }
+
+  #page_bondquote ul#bondquote-main input#biznameinput,
+  #page_bondquote ul#bondquote-main select#biznameinput {
+    max-width: unset;
+  }
+
+  #page_bondquote ul#bondquote-main button:not(.pika-button),
+  #page_bondquote ul#bondquote-main .blue-card {
+    font-size: 20px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  #page_bondquote ul#bondquote-main button:not(.pika-button).blue-card p,
+  #page_bondquote ul#bondquote-main button:not(.pika-button).continue-button p,
+  #page_bondquote ul#bondquote-main button:not(.pika-button).blue-button p,
+  #page_bondquote ul#bondquote-main .blue-card.blue-card p,
+  #page_bondquote ul#bondquote-main .blue-card.continue-button p,
+  #page_bondquote ul#bondquote-main .blue-card.blue-button p {
+    font-size: 24px;
+  }
+
+  #page_bondquote ul#bondquote-main #page-28-bond-issued-confirmation .blue-card.issuance-end-buttons,
+  #page_bondquote ul#bondquote-main #page-28-bond-issued-confirmation .blue-card.issuance-dashboard-button {
+    width: 99%;
+    min-width: unset;
+  }
+
+  #page_bondquote #government-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #page_bondquote #government-wrapper button {
+    max-height: 100px;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #page_bondquote #government-wrapper button p {
+    flex: 1;
+    text-align: right;
+  }
+
+  #page_bondquote #government-wrapper button div {
+    flex: 1;
+    display: flex;
+    justify-items: flex-start;
+  }
+
+  #page_bondquote #government-wrapper button svg {
+    height: 75px;
+    margin-left: 10px;
+  }
+
+  #page_bondquote #bond_selector_list .bond_selector_ele,
+  #page_bondquote #bond_sub_selector_list .bond_selector_ele {
+    width: 98%;
+    padding: 20px;
+  }
+
+  #page_bondquote #bond_selector_list .bond_selector_ele:hover,
+  #page_bondquote #bond_sub_selector_list .bond_selector_ele:hover {
+    background: #105994;
+  }
+
+  #page_bondquote .address_form.row {
+    flex-direction: column;
+  }
+
+  #page_bondquote .row {
+    flex-direction: column;
+  }
+
+  #page_bondquote #page-13b-principal.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #page_bondquote #bond_quote_selector_list {
+    flex-direction: column;
+  }
+
+  #page_bondquote #bond_quote_selector_list .quote_options {
+    margin: 1% 0;
+    width: 100%;
+  }
+
+  #page_bondquote #bond_quote_selector_list .quote_options p {
+    font-size: 14px;
+  }
+
+  #page_bondquote #page-08b-principalcheck .email-template input,
+  #page_bondquote #page-19-sendemail .email-template input {
+    max-width: unset;
+  }
+}
+
+@media (max-width: 560px) {
+  #page_bondquote h1 {
+    font-size: 18px;
+  }
+
+  #page_bondquote ul#bondquote-main input,
+  #page_bondquote ul#bondquote-main select {
+    margin: 5px;
+  }
+
+  #page_bondquote ul#bondquote-main input#biznameinput,
+  #page_bondquote ul#bondquote-main select#biznameinput {
+    max-width: unset;
+  }
+
+  #page_bondquote ul#bondquote-main button:not(.pika-button),
+  #page_bondquote ul#bondquote-main .blue-card {
+    font-size: 20px;
+    min-width: unset;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  #page_bondquote ul#bondquote-main button:not(.pika-button).blue-card,
+  #page_bondquote ul#bondquote-main button:not(.pika-button).continue-button,
+  #page_bondquote ul#bondquote-main button:not(.pika-button).blue-button,
+  #page_bondquote ul#bondquote-main .blue-card.blue-card,
+  #page_bondquote ul#bondquote-main .blue-card.continue-button,
+  #page_bondquote ul#bondquote-main .blue-card.blue-button {
+    min-width: unset;
+  }
+
+  #page_bondquote ul#bondquote-main button:not(.pika-button).blue-card p,
+  #page_bondquote ul#bondquote-main button:not(.pika-button).continue-button p,
+  #page_bondquote ul#bondquote-main button:not(.pika-button).blue-button p,
+  #page_bondquote ul#bondquote-main .blue-card.blue-card p,
+  #page_bondquote ul#bondquote-main .blue-card.continue-button p,
+  #page_bondquote ul#bondquote-main .blue-card.blue-button p {
+    font-size: 24px;
+  }
+
+  #page_bondquote #page-21-signupload.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #page_bondquote #page-21-signupload.active #download_policy_application,
+  #page_bondquote #page-21-signupload.active #policy_application_upload {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  #page_bondquote #page-21-signupload.active #download_policy_application p,
+  #page_bondquote #page-21-signupload.active #policy_application_upload p {
+    position: unset;
+  }
+}
+
+.spa-page.active .loading_overlay {
+  display: none !important;
+  position: relative !important;
+}
+
+.spa-page.active .loading.loading_overlay {
+  padding-top: 5vh;
+  display: block !important;
+  font-size: 24px;
+}
+
+.spa-page.active .loading.loading_overlay .animation {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 0 auto;
+  color: #999999 !important;
+}
+
+.spa-page.active .loading.loading_overlay .animation span {
+  display: inline-block !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #238FE7 !important;
+  margin: 35px 2px;
+  opacity: 0;
+}
+
+.spa-page.active .loading.loading_overlay .animation span:nth-child(1) {
+  -webkit-animation: opacitychange 1s ease-in-out infinite;
+          animation: opacitychange 1s ease-in-out infinite;
+}
+
+.spa-page.active .loading.loading_overlay .animation span:nth-child(2) {
+  -webkit-animation: opacitychange 1s ease-in-out 0.33s infinite;
+          animation: opacitychange 1s ease-in-out 0.33s infinite;
+}
+
+.spa-page.active .loading.loading_overlay .animation span:nth-child(3) {
+  -webkit-animation: opacitychange 1s ease-in-out 0.66s infinite;
+          animation: opacitychange 1s ease-in-out 0.66s infinite;
+}
+
+@keyframes opacitychange {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    opacity: 1;
+  }
+}
+

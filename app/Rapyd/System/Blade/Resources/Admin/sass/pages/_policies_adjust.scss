@@ -1,0 +1,67 @@
+#page_bond_policies_adjust {
+  #adjustment_section .card {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  #adjustment_section .accounting_footer {
+    background: #666;
+    color: #FFF;
+  }
+  #adjustment_section .card-header {
+    height: 25px;
+    padding: 0.75rem;
+    background: #444;
+    color: #FFF;
+  }
+  #adjustment_section .card-header .card-title {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  #adjustment_section td input {
+    width: 95%;
+    height: 20px !important;
+    padding: 0 !important;
+  }
+  #adjustment_section th:not(.summary),
+  #adjustment_section td:not(.summary) {
+    line-height: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    padding-left: 0.75rem !important;
+  }
+  #adjustment_section td span {
+    position: absolute;
+    margin-left: -9px;
+  }
+  #adjustment_section th:first-child,
+  #adjustment_section td:first-child {
+    width: 70%;
+  }
+  #adjustment_section th:last-child,
+  #adjustment_section td:last-child {
+    width: 30%;
+  }
+  #adjustment_section #payments_recieved th,
+  #adjustment_section #payments_recieved td {
+    width: 20%;
+  }
+  #adjustment_section .summary th,
+  #adjustment_section .summary td {
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+  }
+  #adjustment_section .accounting_footer td {
+    text-align: right;
+  }
+  #adjustment_section .table-striped {
+    margin-bottom: 0;
+  }
+
+  .payment_row.plus_value td {
+    background: #95cc8c;
+  }
+  .payment_row.negative_value td {
+    background: #d27676;
+  }
+}

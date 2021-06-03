@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+// @import 'abstracts/*;
+@import '../../../../../../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import 'abstracts/variables';
+
+// 2. Vendors
+// @import;
+
+// 3. Base stuff
+// @import 'base/*;
+
+// 4. Layout-related sections
+@import 'layout/agent-layout';
+@import 'layout/dashboard-table';
+
+// 5. Components
+@import 'components/modal';
+
+// 6. Page-specific styles
+@import 'pages/policies_adjust',
+  'pages/agent-view-policy',
+  'pages/policies_create',
+  'pages/policies_edit',
+  'pages/policies_edit_accounting',
+  'pages/policies_edit_history',
+  'pages/policies_edit_pricing',
+  'pages/view_policy_pdf',
+  'pages/settings_site',
+  'pages/user_profile',
+  'pages/usergroups_profile',
+  'pages/cms_blog_create',
+  'pages/cms_page_create',
+  'pages/menu-builder',
+  'pages/dashboard',
+  'pages/usergroup_completion',
+  'pages/devtools';
+
+// 7. Themes
+// @import 'themes/*;

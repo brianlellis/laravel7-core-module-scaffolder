@@ -1,0 +1,21 @@
+.agent-page-header {
+
+  @include breakpoint($bp-w-768) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 8px;
+    margin: 10px 0;
+
+    & .d-flex.align-items-center {
+      flex-direction: column;
+      align-items: flex-start !important;
+      width: 100% !important;
+
+      & .btn {
+        margin-left: 0 !important;
+        margin-top: 5px;
+      }
+    }
+  }
+}

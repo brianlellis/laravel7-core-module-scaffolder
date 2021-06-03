@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         processIsolation="true"
+         colors="true"
+>
+  <testsuites>
+    <testsuite name="Unit">
+      <directory suffix="Test.php">./tests/Unit</directory>
+    </testsuite>
+    <testsuite name="Feature">
+      <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./app/Rapyd/System</directory>
+      <exclude>
+        <!-- blade templates, not supported by phpunit coverage -->
+        <directory>./app/Rapyd/System/Blade</directory>
+        <directory>./app/Rapyd/System/Controllers/BladeScaffold</directory>
+
+        <!-- arrays of config values, nothing to test -->
+        <directory>./app/Rapyd/System/Events</directory>
+
+        <!-- ecommerce is currently detached from the system -->
+        <directory>./app/Rapyd/System/Controllers/Ecommerce</directory>
+        <directory>./app/Rapyd/System/Models/Ecommerce</directory>
+
+        <!-- migrators -->
+        <directory>./app/Rapyd/System/Controllers/DB</directory>
+        <directory>./app/Rapyd/System/Controllers/Bond/Migrators</directory>
+        <file>./app/Rapyd/System/Controllers/Bond/BondLibraryMigrator.php</file>
+        <file>./app/Rapyd/System/Controllers/Bond/BondLibraryObligeeMigrator.php</file>
+        <file>./app/Rapyd/System/Controllers/Bond/BondLibraryPricingMigrator.php</file>
+
+        <!-- dead code -->
+        <file>./app/Rapyd/System/Controllers/Bond/PolicyCancellation.php</file>
+        <file>./app/Rapyd/System/Controllers/Bond/PolicyInvoicing.php</file>
+        <file>./app/Rapyd/System/Controllers/Bond/PolicyReportSurety.php</file>
+      </exclude>
+    </whitelist>
+  </filter>
+  <php>
+    <server name="APP_ENV" value="testing"/>
+    <server name="BCRYPT_ROUNDS" value="4"/>
+    <server name="CACHE_DRIVER" value="array"/>
+    <!-- <server name="DB_CONNECTION" value="sqlite"/> -->
+    <!-- <server name="DB_DATABASE" value=":memory:"/> -->
+    <server name="MAIL_MAILER" value="array"/>
+    <server name="QUEUE_CONNECTION" value="sync"/>
+    <server name="SESSION_DRIVER" value="array"/>
+    <server name="TELESCOPE_ENABLED" value="false"/>
+  </php>
+</phpunit>

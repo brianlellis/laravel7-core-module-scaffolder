@@ -1,0 +1,55 @@
+#page_bond_policies_edit {
+  #accounting_section .card {
+    margin-bottom: 8px;
+  }
+  #accounting_section .accounting_footer {
+    background: #666;
+    color: #FFF;
+  }
+  #accounting_section .card-header {
+    height: 25px;
+    padding: 0.75rem;
+  }
+  #accounting_section .card-header .card-title {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  #accounting_section th,
+  #accounting_section td {
+    width: 75%;
+    line-height: 0.7;
+  }
+  #accounting_section th:last-child,
+  #accounting_section td:last-child {
+    width: 25%;
+    padding-right: 3%;
+    text-align: right;
+  }
+  #accounting_section .adjustment-record th,
+  #accounting_section .adjustment-record td {
+    width: 25%;
+    line-height: 0.7;
+    text-align: left;
+  }
+  #accounting_section #payments_recieved th,
+  #accounting_section #payments_recieved td {
+    width: 20%;
+  }
+  #accounting_section .summary th,
+  #accounting_section .summary td {
+    width: 11.11%;
+    line-height: 1;
+    text-align: center;
+  }
+  #accounting_section td {
+    line-height: 0.2;
+  }
+  #accounting_section .accounting_footer td {
+    text-align: right;
+  }
+  #accounting_section .table-striped {
+    margin-bottom: 0;
+  }
+  #accounting_section .card-header .card-title span { right: 30px !important; }
+  #accounting_section .card-title.summary { margin-bottom: 0; }
+}

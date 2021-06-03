@@ -1,0 +1,9 @@
+.table-responsive .sorter:first-child {
+  margin-left: 15px;
+}
+.table-responsive .sorter {
+  margin-left: 5px;
+}
+.table-responsive .sorter:not(.active) {
+  color: #CCC;
+}

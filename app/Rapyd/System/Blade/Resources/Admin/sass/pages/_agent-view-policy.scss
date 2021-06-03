@@ -1,0 +1,105 @@
+#page_agent_view-policy {
+  & .nav-link {
+    font-size: 17px;
+    border-radius: 1px;
+}
+
+  & .main-h4 {
+    margin-bottom: 2px;
+    color: #fff;
+    background: #333;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 4px;
+  }
+
+  & .main {
+    display: flex;
+    & b {
+      color: black;
+    }
+  }
+
+  & .actions {
+    min-width: 280px;
+    margin-right: 2%;
+
+    & .actions-card-body {
+      min-height: 175px;
+    }
+  }
+
+  & .info {
+    display: flex;
+    justify-content: space-between;
+
+    & .flex-1 {
+      width: 49%;
+    }
+
+    & .summary,
+    & .issued {
+      & .card {
+        min-height: 425px;
+        max-height: 425px;
+        overflow-y: scroll;
+      }
+    }
+
+    & .principals,
+    & .agent {
+      & .card {
+        min-height: 170px;
+        max-height: 170px;
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  & #pills-payments,
+  & #pills-files {
+    width: 100%;
+  }
+
+  & #printable {
+    height: 0;
+  }
+
+  @include breakpoint($bp_w_1280) {
+    & .info {
+      & .flex-1 {
+        width: 100%;
+      }
+    }
+  }
+
+  @include breakpoint($bp_w_1080) {
+    & .main {
+      flex-direction: column-reverse;
+    }
+
+    & .actions {
+      margin-right: 0;
+    }
+
+    & .info {
+      & .summary,
+      & .issued {
+        & .card {
+          min-height: unset;
+          max-height: unset;
+          height: auto;
+        }
+      }
+
+      & .principals,
+      & .agent {
+        & .card {
+          min-height: unset;
+          max-height: unset;
+          height: auto;
+        }
+      }
+    }
+  }
+}

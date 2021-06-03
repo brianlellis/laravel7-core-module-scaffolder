@@ -1,0 +1,30 @@
+# HOMESTEAD, YARN AND NPM FILE
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/node_modules
+
+# DOT FILES
+.exe
+.DS_Store
+.env
+.env.backup
+.phpunit.result.cache
+
+# Rapyd
+/app/Rapyd/Modules/*
+/database/*
+
+# Generally Ignored App Files
+/storage
+/public/images
+/public/ISSUED_BOND_FORMS
+/public/ISSUED_OVERLAYS
+/public/storage
+/vendor
+/Tinker
+/resources
+
+# Public assets
+public/user/avatar/

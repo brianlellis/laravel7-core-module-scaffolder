@@ -1,0 +1,47 @@
+#page_bond_policies_create {
+  & .btn.btn-primary.search-btn {
+    position: relative;
+    top: -1px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .fe-search {
+      font-size: 20px;
+      padding-bottom: 2px;
+    }
+  }
+
+  @include breakpoint($bp_w_1080) {
+    & .row {
+      flex-direction: column;
+
+
+      & div[class^="col-"] {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 10px;
+      }
+    }
+
+    & .row.search-wrapper {
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      & div.col-3,
+      & div.col-8,
+      & div.col-11 {
+        max-width: unset;
+        flex: 1;
+      }
+
+      & div.col-1,
+      & span.col-1 {
+        flex: 0;
+        padding: 0;
+      }
+    }
+  }
+}

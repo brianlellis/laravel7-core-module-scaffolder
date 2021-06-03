@@ -1,0 +1,243 @@
+#page_bond_policies_edit {
+  #send_manual_email_modal {
+    width: 95%;
+    height: 95vh;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: #fff;
+    padding: 2%;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 300px rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  #send_manual_email_modal.active {
+    display: block;
+  }
+
+  #send_manual_email_modal textarea {
+    height: 30vh;
+  }
+
+  #send_manual_email_close {
+    position: fixed;
+    right: 1vw;
+    top: 1vh;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 99999;
+    color: #fff;
+  }
+
+  #policy_instance_history_modal {
+    width:50vw;
+    height: 70vh;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: #fff;
+    padding: 2%;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+
+    h1 {
+      text-align: center;
+    }
+    
+    a {
+      display: block;
+      text-align: center;
+      margin: 14px 0;
+      padding: 5px 0;
+      background: #0774f8;
+      color: #FFF;
+      border-radius: 5px;
+
+      &:hover {
+        background: lighten(#0774f8, 10%);
+      }
+    }
+  }
+  #policy_instance_history_modal.active {
+    display: block;
+  }
+
+  #policy_instance_history_close {
+    position: fixed;
+    right: 23vw;
+    top: 10vh;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 99999;
+    background: #0774f8 !important;
+    border: 0;
+    color: #fff;
+  }
+
+  a.btn.btn-primary.btn-sm.active-default {
+    background: #ccc !important;
+    pointer-events: none;
+    border: 2px solid black !important;
+    box-shadow: unset;
+    color: black !important;
+    font-weight: 900;
+    font-size: 1em;
+    margin-top: 5px;
+    line-height: 9px;
+  }
+
+  .tab_wrapper .content_wrapper .tab_content {
+    padding: 15px 0;
+  }
+
+  #right_sidebar {
+    position: fixed;
+    right: 0;
+    width: 22%;
+  }
+
+  #right_sidebar p {
+    margin-bottom: 0.5em;
+  }
+
+  #right_sidebar h5 {
+    margin-bottom: 0.25em;
+    text-decoration: underline;
+  }
+
+  #right_sidebar .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  & .btn.btn-primary.search-btn {
+    position: relative;
+    top: -1px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .fe-search {
+      font-size: 20px;
+      padding-bottom: 2px;
+    }
+  }
+
+  & .bond_policy_status {
+    margin-top: 73px;
+    border-radius: 7px;
+    overflow: hidden;
+
+    & #bond_policy_status_name {
+      text-align: center;
+      color: white;
+      line-height: 28px;
+      height: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  & .green-header {
+    line-height: 2;
+    padding-left: 10px;
+    margin-left: -15px;
+  }
+
+  @include breakpoint($bp_w_1366) {
+    & .row {
+      padding: 0px;
+    }
+
+    & div[class^="col-"] {
+      padding: 10px;
+    }
+
+    & .card {
+      & .card-header {
+        padding: 10px;
+        padding-right: 20px;
+      }
+      & .card-body {
+        padding: 10px;
+      }
+    }
+
+    & .bond_policy_status {
+      margin-top: 92px;
+    }
+
+    & .green-header {
+      margin-left: 0px;
+    }
+
+    & .btn.btn-primary.search-btn {
+      &#search_dashboard_submit {
+        top: 9px;
+      }
+    }
+  }
+
+  @include breakpoint($bp_w_1080) {
+    & #main-content {
+      flex-direction: column;
+
+      & #left_content {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      & #right_sidebar {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        position: unset;
+        & .card.bond_policy_status {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  #purchase_policy_form_wrapper a.btn-primary.mb-2:not(.active-default),
+  #payments_tab_wrapper button {
+    display: none;
+  }
+
+  #tab_files_wrapper {
+    h3.file_header + .row.dashboard__table-pagination {
+      margin: 0 !important;
+    }
+    h3.file_header {
+      margin-bottom: 0;
+      margin-left: 5px;
+      font-size: 16px;
+      color: #FFF;
+      background: #333;
+      display: inline-block;
+      padding: 5px;
+    }
+  }
+  
+
+  #download_pow_attorney.disabled {
+    background: #CCC;
+    pointer-events: none;
+  }
+}
+
+#credit_card_wrapper i.payment {
+  position: absolute !important;
+  right: 9% !important;
+  top: 51% !important;
+  width: 35px !important;
+}

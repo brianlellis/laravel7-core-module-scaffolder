@@ -1,0 +1,23 @@
+#page_menu-builder {
+  .parent-menu.has-children:after {
+    content: '-';
+    float: right;
+  }
+  .collapsed.parent-menu.has-children:after {
+    content: '+';
+  }
+  .menu-builder-input {
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid;
+  }
+  .menu-builder-input.name {
+    margin-right: 10px;
+  }
+  .menu-builder-input.url {
+    width: 300px;
+  }
+  .remove_child_menu_item {
+    float: right;
+  }
+}

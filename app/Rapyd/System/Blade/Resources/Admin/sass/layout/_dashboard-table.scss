@@ -1,0 +1,138 @@
+.dashboard__table-actions {
+  @include breakpoint($bp_w_1280) {
+    & .btn {
+      padding: 2px 4px;
+    }
+
+    & h2 {
+      font-size: 20px;
+    }
+  }
+
+  @include breakpoint($bp_w_1080) {
+    & .col-lg-12.margin-tb {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    & .pull-left {
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      & h2 {
+        width: 100%;
+      }
+
+
+
+      & .btn {
+        width: 49%;
+        margin: 0;
+
+        &.mr-2 {
+          margin-right: 0 !important;
+        }
+
+        // Export BTN
+        &:nth-child(2) {
+          order: 2;
+        }
+
+        // Create BTN
+        &:nth-child(3) {
+          order: 1;
+        }
+      }
+    }
+
+    & .pull-right {
+      width: 100%;
+
+      & form {
+        & .pull-right {
+          display: flex;
+          justify-content: space-between;
+          & input[type="file"] {
+            width: 50%;
+          }
+
+          & .btn {
+            margin-top: 0 !important;
+            width: 48%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dashboard__table-search {
+  #search_dashboard_input {
+    padding: 15px 10px;
+  }
+}
+
+.dashboard__table-pagination {
+  @include breakpoint(max-width 1130px) {
+    & .col-sm-12 {
+      padding: 0;
+
+      & .pull-right {
+        float: unset;
+      }
+
+      & li.page-item {
+        display: none;
+      }
+
+      & .page-item:first-child,
+      & .page-item:nth-child(2),
+      & .page-item:nth-last-child(2),
+      & .page-item:last-child,
+      & .page-item.active,
+      & .page-item.disabled {
+        display: block;
+      }
+    }
+  }
+}
+
+.dashboard__table-table {
+  @include breakpoint($bp_w_768) {
+    & .btn {
+      padding: 2px 4px;
+    }
+  }
+}
+
+.policy-dashboard-filters {
+  & select.form-control {
+    height: 33px !important;
+  }
+
+  @include breakpoint($bp_w_1080) {
+    margin: 0;
+    justify-content: space-between;
+    & div.col-3 {
+      margin: 0;
+      padding: 0;
+      flex: 0 0 32%;
+      max-width: 32%;
+
+      &:last-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 20px;
+        & a {
+          display: block;
+        }
+      }
+    }
+  }
+}
