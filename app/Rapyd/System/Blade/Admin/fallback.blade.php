@@ -166,8 +166,6 @@
   @yield('content', View::make('rapyd_module_public::'.$blade_lookup, $request_data))
 @elseif(View::exists('rapyd_master::'.$blade_lookup))
   @yield('content', View::make('rapyd_master::'.$blade_lookup, $request_data))
-@elseif($via_pageslug)
-  @yield('content', View::make('rapyd_master::master', $request_data))
 @else
   {{-- DONT CHANGE PAGE ID IF PARTIAL FAILED --}}
   @if (strpos($blade_lookup, '.partials') == false)
