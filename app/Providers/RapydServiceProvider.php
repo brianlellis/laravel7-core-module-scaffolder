@@ -234,13 +234,14 @@ class RapydServiceProvider extends ServiceProvider
 
       foreach ($helper_files as $helper_file) {
         require_once $app_root . '/app/Rapyd/Modules/'.$folder.'/Observers/'.$helper_file;
-        $observer_arr[] = $model_file;
+        $observer_arr[] = str_replace('.php','',$helper_file);
       }
     }
 
     foreach ($observer_arr as $observer) {
-      $model = $observer::model_used();
-      $model::observe(get_class($observer));
+      $class = "\\Rapyd\\Observers\\{$observer}";
+      $model = $class::model_used();
+      $model::observe(get_class(new $class()));
     }
   }
   protected function getSystemObservers($app_root)
@@ -269,13 +270,14 @@ class RapydServiceProvider extends ServiceProvider
 
       foreach ($nested_model_files as $model_file) {
         require_once $app_root . '/app/Rapyd/System/Observers/'.$folder.'/'.$model_file;
-        $observer_arr[] = $model_file;
+        $observer_arr[] = str_replace('.php','',$model_file);
       }
     }
 
     foreach ($observer_arr as $observer) {
-      $model = $observer::model_used();
-      $model::observe(get_class($observer));
+      $class = "\\Rapyd\\Observers\\{$observer}";
+      $model = $class::model_used();
+      $model::observe(get_class(new $class()));
     }
   }
 
