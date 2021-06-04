@@ -8,6 +8,11 @@ class PolicyObserver
 {
   public $afterCommit = true;
 
+  public function model_used()
+  {
+    return '\Rapyd\Model\BondPolicies';
+  }
+
   public function created(BondPolicies $policy)
   {
       //

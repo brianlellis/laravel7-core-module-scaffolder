@@ -6,23 +6,28 @@ use Rapyd\Model\BondLibraries;
 
 class BondLibraryObserver
 {
-    public function created(BondLibraries $bond)
-    {
-        //
-    }
+  public static function model_used()
+  {
+    return '\Rapyd\Model\BondLibraries';
+  }
 
-    public function updated(BondLibraries $bond)
-    {
-        //
-    }
+  public function created(BondLibraries $bond)
+  {
+      //
+  }
 
-    public function deleted(BondLibraries $bond)
-    {
-      $bond->get_limit->delete();
-    }
+  public function updated(BondLibraries $bond)
+  {
+      //
+  }
 
-    public function forceDeleted(BondLibraries $bond)
-    {
-        //
-    }
+  public function deleted(BondLibraries $bond)
+  {
+    $bond->get_limit->delete();
+  }
+
+  public function forceDeleted(BondLibraries $bond)
+  {
+      //
+  }
 }

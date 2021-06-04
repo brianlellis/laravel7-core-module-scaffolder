@@ -12,6 +12,7 @@ use Rapyd\Observers\PolicyObserver;
 
 class RapydServiceProvider extends ServiceProvider
 {
+  private static $observer_arr = [];
   /**
    * Register services.
    *
@@ -56,13 +57,13 @@ class RapydServiceProvider extends ServiceProvider
     /**
      * LOAD CONTROLLERS AND HELPERS
     **/
-    self::getSystemClasses($app_root);
+    self::getSystemControllers($app_root);
     self::getSystemMiddleware($app_root);
-    self::getModuleClasses($app_root);
+    self::getModuleControllers($app_root);
     self::getModuleMiddleware($app_root);
 
     /**
-     * LOAD MODELS DEFINED
+     * LOAD MODELS AND MODEL METHODS
     **/
     self::getSystemTraits($app_root);
     self::getSystemModels($app_root);
@@ -70,19 +71,13 @@ class RapydServiceProvider extends ServiceProvider
     self::getModuleTraits($app_root);
     self::getModuleModels($app_root);
     self::getModuleObservers($app_root);
-
-    /** 
-     * OBSERVER DECLARATIONS
-    **/
-    // \Rapyd\Model\BondLibraries::observe(BondLibraryObserver::class);
-    // \Rapyd\Model\BondPolicies::observe(PolicyObserver::class);
   }
 
 
   /*
    * GET CONTROLLER AND HELPER CLASSES FROM SYSTEM AND MODULES
    */
-  protected function getModuleClasses($app_root)
+  protected function getModuleControllers($app_root)
   {
     //REQUIRE ALL DIRECTIVE FILES IN MODULES ALSO
     $module_folders = array_map(function ($dir) {
@@ -106,7 +101,7 @@ class RapydServiceProvider extends ServiceProvider
     }
   }
 
-  protected function getSystemClasses($app_root)
+  protected function getSystemControllers($app_root)
   {
     // REQUIRE ALL RAPYD SYSTEM CONTROLLERS
     $sys_folders = array_map(function ($dir) {
@@ -224,6 +219,8 @@ class RapydServiceProvider extends ServiceProvider
 
   protected function getModuleObservers($app_root)
   {
+    $observer_arr = [];
+
     //REQUIRE ALL DIRECTIVE FILES IN MODULES ALSO
     $module_folders = array_map(function ($dir) {
       return basename($dir);
@@ -237,11 +234,19 @@ class RapydServiceProvider extends ServiceProvider
 
       foreach ($helper_files as $helper_file) {
         require_once $app_root . '/app/Rapyd/Modules/'.$folder.'/Observers/'.$helper_file;
+        $observer_arr[] = $model_file;
       }
+    }
+
+    foreach ($observer_arr as $observer) {
+      $model = $observer::model_used();
+      $model::observe(get_class($observer));
     }
   }
   protected function getSystemObservers($app_root)
   {
+    $observer_arr = [];
+
     // REQUIRE ALL RAPYD SYSTEM MODELS
     $model_files = array_map(function ($dir) {
       return basename($dir);
@@ -264,7 +269,13 @@ class RapydServiceProvider extends ServiceProvider
 
       foreach ($nested_model_files as $model_file) {
         require_once $app_root . '/app/Rapyd/System/Observers/'.$folder.'/'.$model_file;
+        $observer_arr[] = $model_file;
       }
+    }
+
+    foreach ($observer_arr as $observer) {
+      $model = $observer::model_used();
+      $model::observe(get_class($observer));
     }
   }
 
