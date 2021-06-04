@@ -5,6 +5,10 @@ __$ composer install__
 __$ php artisan rapyd:theme:install__  
 __$ php artisan rapyd:module__  
 
+# PERFORMANCE TESTING
+## DO NOT COMMIT PERFORMANCE DEPENDENCIES TO CODE!!!!
+https://github.com/jkocik/laravel-profiler
+https://superuser.com/questions/383580/how-to-install-autoconf-automake-and-related-tools-on-mac-os-x-from-source
 
 # HTML BASE FOR ADMIN SCAFFOLDING
 ## Vlogh 
