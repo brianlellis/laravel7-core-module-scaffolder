@@ -59,6 +59,68 @@ function return_aliases() {
   return $alias_arr;
 }
 
+function return_providers() {
+  $app_root = base_path();
+
+  $provider_arr = [
+    Illuminate\Auth\AuthServiceProvider::class,
+    Illuminate\Broadcasting\BroadcastServiceProvider::class,
+    Illuminate\Bus\BusServiceProvider::class,
+    Illuminate\Cache\CacheServiceProvider::class,
+    Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+    Illuminate\Cookie\CookieServiceProvider::class,
+    Illuminate\Database\DatabaseServiceProvider::class,
+    Illuminate\Encryption\EncryptionServiceProvider::class,
+    Illuminate\Filesystem\FilesystemServiceProvider::class,
+    Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+    Illuminate\Hashing\HashServiceProvider::class,
+    Illuminate\Mail\MailServiceProvider::class,
+    Illuminate\Notifications\NotificationServiceProvider::class,
+    Illuminate\Pagination\PaginationServiceProvider::class,
+    Illuminate\Pipeline\PipelineServiceProvider::class,
+    Illuminate\Queue\QueueServiceProvider::class,
+    Illuminate\Redis\RedisServiceProvider::class,
+    Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+    Illuminate\Session\SessionServiceProvider::class,
+    Illuminate\Translation\TranslationServiceProvider::class,
+    Illuminate\Validation\ValidationServiceProvider::class,
+    Illuminate\View\ViewServiceProvider::class,
+
+    /*
+     * Application Service Providers...
+     */
+    App\Providers\AppServiceProvider::class,
+    App\Providers\AuthServiceProvider::class,
+    // App\Providers\BroadcastServiceProvider::class,
+    App\Providers\EventServiceProvider::class,
+    App\Providers\RouteServiceProvider::class,
+
+    /*
+     * RAPYD Service Providers...
+     */
+     App\Providers\RapydServiceProvider::class,
+     Maatwebsite\Excel\ExcelServiceProvider::class,
+     Studio\Totem\Providers\TotemServiceProvider::class,
+  ];
+
+  $module_folders = array_map(function ($dir) {
+    return basename($dir);
+  }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
+
+  foreach ($module_folders as $folder) {
+    $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/ServiceProvider.php';
+    if (file_exists($filepath)) {
+      // https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
+      // https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
+      include $filepath;
+      $class_str      = '\\Rapyd\\'.$folder.'ServiceProvider';
+      $provider_arr[] = $class_str;
+    }
+  }
+
+  return $provider_arr;
+}
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -160,50 +222,7 @@ return [
     | request to your application. Feel free to add your own services to
     | this array to grant expanded functionality to your applications.
     */
-    'providers' => [
-      Illuminate\Auth\AuthServiceProvider::class,
-      Illuminate\Broadcasting\BroadcastServiceProvider::class,
-      Illuminate\Bus\BusServiceProvider::class,
-      Illuminate\Cache\CacheServiceProvider::class,
-      Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-      Illuminate\Cookie\CookieServiceProvider::class,
-      Illuminate\Database\DatabaseServiceProvider::class,
-      Illuminate\Encryption\EncryptionServiceProvider::class,
-      Illuminate\Filesystem\FilesystemServiceProvider::class,
-      Illuminate\Foundation\Providers\FoundationServiceProvider::class,
-      Illuminate\Hashing\HashServiceProvider::class,
-      Illuminate\Mail\MailServiceProvider::class,
-      Illuminate\Notifications\NotificationServiceProvider::class,
-      Illuminate\Pagination\PaginationServiceProvider::class,
-      Illuminate\Pipeline\PipelineServiceProvider::class,
-      Illuminate\Queue\QueueServiceProvider::class,
-      Illuminate\Redis\RedisServiceProvider::class,
-      Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
-      Illuminate\Session\SessionServiceProvider::class,
-      Illuminate\Translation\TranslationServiceProvider::class,
-      Illuminate\Validation\ValidationServiceProvider::class,
-      Illuminate\View\ViewServiceProvider::class,
-
-      /*
-       * Package Service Providers...
-       */
-
-      /*
-       * Application Service Providers...
-       */
-      App\Providers\AppServiceProvider::class,
-      App\Providers\AuthServiceProvider::class,
-      // App\Providers\BroadcastServiceProvider::class,
-      App\Providers\EventServiceProvider::class,
-      App\Providers\RouteServiceProvider::class,
-
-      /*
-       * RAPYD Service Providers...
-       */
-       App\Providers\RapydServiceProvider::class,
-       Maatwebsite\Excel\ExcelServiceProvider::class,
-       Studio\Totem\Providers\TotemServiceProvider::class,
-    ],
+    'providers' => return_providers(),
 
     /*
     |--------------------------------------------------------------------------

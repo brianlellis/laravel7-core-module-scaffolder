@@ -69,6 +69,7 @@ class RapydServiceProvider extends ServiceProvider
     self::getSystemModels($app_root);
     self::getSystemObservers($app_root);
     self::getModuleTraits($app_root);
+    self::getModuleContracts($app_root);
     self::getModuleModels($app_root);
     self::getModuleObservers($app_root);
   }
@@ -278,6 +279,25 @@ class RapydServiceProvider extends ServiceProvider
       $class = "\\Rapyd\\Observers\\{$observer}";
       $model = $class::model_used();
       $model::observe(get_class(new $class()));
+    }
+  }
+
+  protected function getModuleContracts($app_root)
+  {
+    //REQUIRE ALL DIRECTIVE FILES IN MODULES ALSO
+    $module_folders = array_map(function ($dir) {
+      return basename($dir);
+    }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
+
+    foreach ($module_folders as $folder) {
+      // load helpers
+      $helper_files = array_map(function ($dir) {
+        return basename($dir);
+      }, glob($app_root . '/app/Rapyd/Modules/'.$folder.'/Contracts/*.{php}', GLOB_BRACE));
+
+      foreach ($helper_files as $helper_file) {
+        require_once $app_root . '/app/Rapyd/Modules/'.$folder.'/Contracts/'.$helper_file;
+      }
     }
   }
 

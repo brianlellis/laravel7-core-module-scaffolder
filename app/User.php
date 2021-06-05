@@ -28,7 +28,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
 	use \Swis\Laravel\Fulltext\Indexable;
 
-	protected $indexContentColumns = [];
+  protected $connection           = 'service_users';
+  protected $indexContentColumns  = [];
 
 	protected $indexTitleColumns = [
 		'email',
