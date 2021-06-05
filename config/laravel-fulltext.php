@@ -5,7 +5,7 @@ return [
      * The database connection to be used
      * Defaults to the default database connection
      */
-    'db_connection' => null,
+    'db_connection' => 'service_fulltext',
 
     'weight' => [
         'title' => 1.5,
