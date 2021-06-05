@@ -135,7 +135,7 @@ return [
             ],
 
             'continents' => [
-                'allow' => [], // i.e. 'Africa'
+                'allow' => ['North America'], // i.e. 'Africa'
                 'block' => [], // i.e. 'Europe'
             ],
 

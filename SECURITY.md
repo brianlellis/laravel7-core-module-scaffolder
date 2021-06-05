@@ -6,5 +6,7 @@ https://blog.quickadminpanel.com/laravel-routing-8-advanced-tips-languages-apis-
 
 ## Web Application Firewall (WAF) package for Laravel
 ### https://github.com/akaunting/laravel-firewall
-This package intends to protect your Laravel app from different type of attacks such as XSS, SQLi, RFI, LFI, User Agent, and a lot more. It will also block repeated attacks and send notification via email and/or slack when attack is detected. Furthermore, it will log failed logins and block the IP after a number of attempts.
+This package intends to protect your Laravel app from different type of attacks such as XSS, SQLi, RFI, LFI, User Agent, and a lot more. It will also block repeated attacks and send notification via email and/or slack when attack is detected. Furthermore, it will log failed logins and block the IP after a number of attempts.  
 
+__*Configure via config/firewall.php__  
+__**Ref for Geo and IP ranging:__ https://ip-api.com/docs/api:json  
