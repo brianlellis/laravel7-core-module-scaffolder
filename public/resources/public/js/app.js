@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/Rapyd/Modules/Brian/Resources/Public/sass/brian_style.scss":
-/*!************************************************************************!*\
-  !*** ./app/Rapyd/Modules/Brian/Resources/Public/sass/brian_style.scss ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./app/Rapyd/System/Blade/Resources/Admin/sass/style.scss":
 /*!****************************************************************!*\
   !*** ./app/Rapyd/System/Blade/Resources/Admin/sass/style.scss ***!
@@ -37335,18 +37324,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/Public/js/app.js ./resources/Public/sass/bondquote.scss ./resources/Public/sass/reset.scss ./resources/Public/sass/style.scss ./app/Rapyd/System/Blade/Resources/Admin/sass/style.scss ./app/Rapyd/Modules/Brian/Resources/Public/sass/brian_style.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/Public/js/app.js ./resources/Public/sass/bondquote.scss ./resources/Public/sass/reset.scss ./resources/Public/sass/style.scss ./app/Rapyd/System/Blade/Resources/Admin/sass/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/js/app.js */"./resources/Public/js/app.js");
-__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/sass/bondquote.scss */"./resources/Public/sass/bondquote.scss");
-__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/sass/reset.scss */"./resources/Public/sass/reset.scss");
-__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/sass/style.scss */"./resources/Public/sass/style.scss");
-__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/app/Rapyd/System/Blade/Resources/Admin/sass/style.scss */"./app/Rapyd/System/Blade/Resources/Admin/sass/style.scss");
-module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/app/Rapyd/Modules/Brian/Resources/Public/sass/brian_style.scss */"./app/Rapyd/Modules/Brian/Resources/Public/sass/brian_style.scss");
+__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/js/app.js */"./resources/Public/js/app.js");
+__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/sass/bondquote.scss */"./resources/Public/sass/bondquote.scss");
+__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/sass/reset.scss */"./resources/Public/sass/reset.scss");
+__webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/sass/style.scss */"./resources/Public/sass/style.scss");
+module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/app/Rapyd/System/Blade/Resources/Admin/sass/style.scss */"./app/Rapyd/System/Blade/Resources/Admin/sass/style.scss");
 
 
 /***/ })

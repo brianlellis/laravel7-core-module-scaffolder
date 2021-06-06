@@ -104,7 +104,7 @@ console.log('COM WORK BRIAN');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/js/components/testcom.js */"./resources/Public/js/components/testcom.js");
+module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/js/components/testcom.js */"./resources/Public/js/components/testcom.js");
 
 
 /***/ })

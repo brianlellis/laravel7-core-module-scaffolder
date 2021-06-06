@@ -97,7 +97,7 @@ css/admin-style
 <script src="/resources/public/js/core/google_maps.js"></script>
 <script src="/resources/public/js/core/spa-system.js"></script>
 <script src="/resources/public/js/core/ajax.js"></script>
-<script src="/admin_resources/admin/js/modal.js"></script>
+<script src="/modules/System/Resources/Admin/js/modal.js"></script>
 
 {{-- JAVASCRIPT SITE TOUR DEPENDENCIES --}}
 <script src="https://cdn.jsdelivr.net/npm/guidechimp@2/dist/guidechimp.min.js"></script>

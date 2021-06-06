@@ -282,7 +282,7 @@ Rapyd.Core.Formatters.init();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/js/core/formatters.js */"./resources/Public/js/core/formatters.js");
+module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/js/core/formatters.js */"./resources/Public/js/core/formatters.js");
 
 
 /***/ })

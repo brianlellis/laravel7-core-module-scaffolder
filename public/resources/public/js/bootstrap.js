@@ -37270,7 +37270,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/js/bootstrap.js */"./resources/Public/js/bootstrap.js");
+module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/js/bootstrap.js */"./resources/Public/js/bootstrap.js");
 
 
 /***/ })

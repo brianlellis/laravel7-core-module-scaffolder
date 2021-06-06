@@ -11,4 +11,4 @@
     </li>
 </ul>
 
-<script src="/admin_resources/admin/js/usergroup-completion.js"></script>
+<script src="/modules/User/Resources/Admin/js/usergroup-completion.js"></script>

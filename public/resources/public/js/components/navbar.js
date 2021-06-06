@@ -128,7 +128,7 @@ Rapyd.navbar.init();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/js/components/navbar.js */"./resources/Public/js/components/navbar.js");
+module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/js/components/navbar.js */"./resources/Public/js/components/navbar.js");
 
 
 /***/ })

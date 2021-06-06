@@ -238,7 +238,7 @@ Rapyd.Page.Enrollment.init();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd_bx/resources/Public/js/page/enrollment.js */"./resources/Public/js/page/enrollment.js");
+module.exports = __webpack_require__(/*! /Volumes/Sites/_LARAVEL_7/rapyd-core/resources/Public/js/page/enrollment.js */"./resources/Public/js/page/enrollment.js");
 
 
 /***/ })
