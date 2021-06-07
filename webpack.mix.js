@@ -42,6 +42,16 @@ if (process.argv.includes('--watch')) {
         ], 'public/modules', null, {
           base: 'app/Rapyd/Modules'
         })
+        .react([
+         'app/Rapyd/Modules/**/Resources/Admin/react/**/*.jsx'
+        ], 'public/modules', null, {
+          base: 'app/Rapyd/Modules'
+        })
+        .react([
+         'app/Rapyd/Modules/**/Resources/Public/js/**/*.jsx'
+        ], 'public/modules', null, {
+          base: 'app/Rapyd/Modules'
+        })
         .sass([
           'resources/Public/sass/**/*.scss',
           '!resources/Public/sass/**/_*.scss'
