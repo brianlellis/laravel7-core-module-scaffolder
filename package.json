@@ -41,6 +41,7 @@
         "laravel-mix-copy-watched": "^2.2.4",
         "nouislider": "^15.1.1",
         "react": "^16.13.1",
-        "react-dom": "^16.13.1"
+        "react-dom": "^16.13.1",
+        "react-email-editor": "^1.2.0"
     }
 }
