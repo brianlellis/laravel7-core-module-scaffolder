@@ -372,7 +372,10 @@ return [
 
             'routes' => [
                 'only' => [], // i.e. 'contact'
-                'except' => [], // i.e. 'admin/*'
+                'except' => [
+                  'api/rapydmail/templates/create',
+                  'api/rapydmail/templates/update'
+                ], // i.e. 'admin/*'
             ],
 
             'inputs' => [
