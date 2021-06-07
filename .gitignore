@@ -20,5 +20,9 @@ yarn-error.log
 /Tinker
 /resources
 
-# Public assets
-public/user/avatar/
+# Public
+/public/*
+!/public/vendor
+!/public/index.php
+!/public/cookie.txt
+
