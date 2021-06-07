@@ -104,8 +104,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
   public static function all_cms_post_count($limit = 10)
   {
-    return  self::withCount('cms_posts')->orderBy('cms_posts_count','DESC')
-              ->limit($limit)->get();
+    $posts = \m_CmsBlogPost::select('user_id', DB::raw('count(*) as total'))
+                ->groupBy('user_id')
+                ->orderBy('total')
+                ->limit($limit)->get();
+
+    return  self::whereIn('id',$posts->pluck('user_id'))->get();
   }
 
   public function legacy_credit_report()
