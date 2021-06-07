@@ -104,7 +104,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
   public static function all_cms_post_count($limit = 10)
   {
-    $posts = \m_CmsBlogPost::select('user_id', DB::raw('count(*) as total'))
+    $posts = \m_CmsBlogPost::select('user_id', \DB::raw('count(*) as total'))
                 ->groupBy('user_id')
                 ->orderBy('total')
                 ->limit($limit)->get();
