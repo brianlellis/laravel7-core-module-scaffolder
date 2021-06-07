@@ -37,7 +37,9 @@
     },
     "dependencies": {
         "@react-page/react-page": "^0.22.0-beta.8",
+        "gsap": "^3.6.1",
         "laravel-mix-copy-watched": "^2.2.4",
+        "nouislider": "^15.1.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
     }
