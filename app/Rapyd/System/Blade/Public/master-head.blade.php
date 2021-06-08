@@ -79,6 +79,10 @@
             };
         @endforeach
     } else {
+      @php
+        $user_address = \RapydUser::address_by_ip();
+        dd($user_address);
+      @endphp
       @if(auth()->user())
         Rapyd.props.user = {
           authorized: true,
@@ -97,19 +101,16 @@
         };
 
         @if (!auth()->user()->state)
-          @php
-            $user_address = unserialize(file_get_contents('http://ip-api.com/php/172.73.166.53'));
-          @endphp
-
+          $user_address = \RapydUser::address_by_ip();
           @if(isset($user_address['lat']))
             Rapyd.props.user.state.full     = "{{$user_address['regionName'] ?? ''}}";
             Rapyd.props.user.state.initial  = "{{$user_address['region'] ?? ''}}";
+            Rapyd.props.user.city           = "{{$user_address['city'] ?? ''}}";
+            Rapyd.props.user.zip            = "{{$user_address['zip'] ?? ''}}";
           @endif
         @endif
       @else
-        @php
-          $user_address = unserialize(file_get_contents('http://ip-api.com/php/172.73.166.53'));
-        @endphp
+        $user_address = \RapydUser::address_by_ip();
         @if(isset($user_address['lat']))
           Rapyd.props.user = {
             authorized: false,
