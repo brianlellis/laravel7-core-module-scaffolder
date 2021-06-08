@@ -81,7 +81,6 @@
     } else {
       @php
         $user_address = \RapydUser::address_by_ip();
-        dd($user_address);
       @endphp
       @if(auth()->user())
         Rapyd.props.user = {
