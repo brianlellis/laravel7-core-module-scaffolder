@@ -73,6 +73,7 @@ class RapydServiceProvider extends ServiceProvider
     self::getModuleExceptions($app_root);
     self::getModuleModels($app_root);
     self::getModuleObservers($app_root);
+    self::getModuleGuards($app_root);
   }
 
 
@@ -336,6 +337,25 @@ class RapydServiceProvider extends ServiceProvider
 
       foreach ($helper_files as $helper_file) {
         require_once $app_root . '/app/Rapyd/Modules/'.$folder.'/Models/'.$helper_file;
+      }
+    }
+  }
+
+  protected function getModuleGuards($app_root)
+  {
+    //REQUIRE ALL DIRECTIVE FILES IN MODULES ALSO
+    $module_folders = array_map(function ($dir) {
+      return basename($dir);
+    }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
+
+    foreach ($module_folders as $folder) {
+      // load helpers
+      $helper_files = array_map(function ($dir) {
+        return basename($dir);
+      }, glob($app_root . '/app/Rapyd/Modules/'.$folder.'/Guard/*.{php}', GLOB_BRACE));
+
+      foreach ($helper_files as $helper_file) {
+        require_once $app_root . '/app/Rapyd/Modules/'.$folder.'/Guard/'.$helper_file;
       }
     }
   }
