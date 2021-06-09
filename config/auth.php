@@ -4,7 +4,7 @@ return [
   'sso' => [
     'driver'  => 'sso',
     'model'   => \App\User::class
-  ]
+  ],
   /*
   |--------------------------------------------------------------------------
   | Authentication Defaults
