@@ -1,20 +1,34 @@
 @section('master-body')
   @include('rapyd_master::master-messages')
   <body id="page_{{$blade_data['page_id']}}">
-    {{-- SESSION SHARING IF LOGGED IN --}}
-    @if(auth()->user() && \SettingsSite::get('system_use_sso') == 'on')
+    @if(!\Session::get('session_share_set'))
       <script>
-        (() => {
-          var client_id = localStorage.setItem('lizzle_pizzle',"{{$client_id}}"),
-              fetch_url = '/api/sessionchecker/'+client_id;
+        function initFingerprintJS() {
+          // Initialize an agent at application startup.
+          const fpPromise = FingerprintJS.load()
 
-          fetch(fetch_url)
-          .then(response => response.text())
-          .then(data => {
-            console.log(data);
-          });
-        })();
+          // Get the visitor identifier when you need it.
+          fpPromise
+            .then(fp => fp.get())
+            .then(result => {
+              const visitorId = result.visitorId
+              $news_url = '/api/findanewsletter';
+              $news_url += '?visit='+visitorId;
+              fetch($news_url)        
+              .then(response => response.text())
+              .then(data => {
+                if (data == 'found') {
+                  window.location.reload();
+                }
+              });
+            })
+        }
       </script>
+      <script
+          async
+          src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+          onload="initFingerprintJS()"
+        ></script>
     @endif
 
     @if(View::exists('theme_layout::public-header'))

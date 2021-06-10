@@ -100,7 +100,9 @@
         };
 
         @if (!auth()->user()->state)
-          $user_address = \RapydUser::address_by_ip();
+          @php
+            $user_address = \RapydUser::address_by_ip();
+          @endphp
           @if(isset($user_address['lat']))
             Rapyd.props.user.state.full     = "{{$user_address['regionName'] ?? ''}}";
             Rapyd.props.user.state.initial  = "{{$user_address['region'] ?? ''}}";
