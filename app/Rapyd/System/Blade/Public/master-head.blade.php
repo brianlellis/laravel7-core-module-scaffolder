@@ -109,7 +109,9 @@
           @endif
         @endif
       @else
-        $user_address = \RapydUser::address_by_ip();
+        @php
+          $user_address = \RapydUser::address_by_ip();
+        @endphp
         @if(isset($user_address['lat']))
           Rapyd.props.user = {
             authorized: false,
