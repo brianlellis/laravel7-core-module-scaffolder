@@ -1,5 +1,37 @@
 @section('master-body')
   <body id="page_{{Session::get('rapyd_blade_data')['page_id']}}" class="app sidebar-mini">
+    {{-- SESSION SHARING IF LOGGED IN --}}
+    @if(
+      \SettingsSite::get('system_use_sso') == 'on' && 
+      !\Session::get('session_share_set')
+    )
+      @php
+        $session_id     = Session::getId();
+        $share_present  = \m_SessionShare::where('session_id',$session_id)->first();
+      @endphp
+      <script>
+        function initFingerprintJS() {
+          // Initialize an agent at application startup.
+          const fpPromise = FingerprintJS.load()
+
+          // Get the visitor identifier when you need it.
+          fpPromise
+            .then(fp => fp.get())
+            .then(result => {
+              const visitorId = result.visitorId
+              $news_url = '/api/needanewsletter';
+              $news_url += '?visit='+visitorId+'&campaign={{$session_id}}';
+              fetch($news_url);
+            })
+        }
+      </script>
+      <script
+          async
+          src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+          onload="initFingerprintJS()"
+        ></script>
+    @endif
+
     {{-- GLOBAL-LOADER --}}
 		<div id="global-loader">
 			<img src="/admin_pub/images/loader.svg" class="loader-img" alt="Loader">
