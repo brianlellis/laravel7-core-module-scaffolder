@@ -1,6 +1,22 @@
 @section('master-body')
   @include('rapyd_master::master-messages')
   <body id="page_{{$blade_data['page_id']}}">
+    {{-- SESSION SHARING IF LOGGED IN --}}
+    @if(auth()->user() && \SettingsSite::get('system_use_sso') == 'on')
+      <script>
+        (() => {
+          var client_id = localStorage.setItem('lizzle_pizzle',"{{$client_id}}"),
+              fetch_url = '/api/sessionchecker/'+client_id;
+
+          fetch(fetch_url)
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+          });
+        })();
+      </script>
+    @endif
+
     @if(View::exists('theme_layout::public-header'))
       @include('rapyd_admin::fallback', [
         'blade_lookup' => 'public-header',

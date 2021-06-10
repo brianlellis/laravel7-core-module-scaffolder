@@ -1,5 +1,27 @@
 @section('master-body')
   <body id="page_{{Session::get('rapyd_blade_data')['page_id']}}" class="app sidebar-mini">
+    {{-- SESSION SHARING IF LOGGED IN --}}
+    @if(auth()->user() && \SettingsSite::get('system_use_sso') == 'on')
+      @php
+        $session_id     = Session::getId();
+        $share_present  = \m_SessionShare::where('session_id',$session_id)->first();
+      @endphp
+
+      @if(!$share_present)
+        @php
+          $client_id = \Str::random(40);
+          \m_SessionShare::insert([
+            'ip'          => request()->ip(),
+            'session_id'  => $session_id,
+            'client_id'   => $client_id
+          ]);
+        @endphp
+        <script>
+          localStorage.setItem('lizzle_pizzle',"{{$client_id}}");
+        </script>
+      @endif
+    @endif
+
     {{-- GLOBAL-LOADER --}}
 		<div id="global-loader">
 			<img src="/admin_pub/images/loader.svg" class="loader-img" alt="Loader">
