@@ -89,9 +89,9 @@ Route::get('{route}', function () {
     // FOR BASE ADMIN NO FORWARD SLASH PATH
     if (strtolower($blade_data['url_path']) === 'admin') {
       if (Auth::user()) {
-        return redirect('/admin/dashboard');
+        return redirect(request()->getSchemeAndHttpHost().'/admin/dashboard');
       } else {
-        return redirect('/login');
+        return redirect(request()->getSchemeAndHttpHost().'/login');
       }
     }
 
