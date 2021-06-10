@@ -58,7 +58,7 @@ class Handler extends ExceptionHandler
           // THIS IS REQUIRED TO ALLOW THE REDIRECT TO LOGIN IF TRYING TO ACCESS
           // AN ADMIN SECTION. ANY OTHER ERRORS NEED TO RETURN WOOPS OR DEBUG INFO
           if ($exception->getMessage() !== 'Unauthenticated.') {
-            return redirect('/woops');
+            return redirect(request()->getSchemeAndHttpHost().'/woops');
           } else {
             return parent::render($request, $exception);
           }

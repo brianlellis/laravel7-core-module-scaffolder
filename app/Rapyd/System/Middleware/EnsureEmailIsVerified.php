@@ -27,7 +27,7 @@ class EnsureEmailIsVerified
         false,
         $request->user()
       );
-      return redirect('/registration-awaiting-approval');
+      return redirect(request()->getSchemeAndHttpHost().'/registration-awaiting-approval');
     }
 
     return $next($request);
