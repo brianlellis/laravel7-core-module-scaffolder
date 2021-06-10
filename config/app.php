@@ -1,124 +1,128 @@
 <?php
 
-function return_aliases() {
-  $app_root = base_path();
+if (!function_exists('return_aliases')) {
+  function return_aliases() {
+    $app_root = base_path();
 
-  $alias_arr = [
-    'App'           => Illuminate\Support\Facades\App::class,
-    'Arr'           => Illuminate\Support\Arr::class,
-    'Artisan'       => Illuminate\Support\Facades\Artisan::class,
-    'Auth'          => Illuminate\Support\Facades\Auth::class,
-    'Blade'         => Illuminate\Support\Facades\Blade::class,
-    'Broadcast'     => Illuminate\Support\Facades\Broadcast::class,
-    'Bus'           => Illuminate\Support\Facades\Bus::class,
-    'Cache'         => Illuminate\Support\Facades\Cache::class,
-    'Config'        => Illuminate\Support\Facades\Config::class,
-    'Cookie'        => Illuminate\Support\Facades\Cookie::class,
-    'Crypt'         => Illuminate\Support\Facades\Crypt::class,
-    'DB'            => Illuminate\Support\Facades\DB::class,
-    'Eloquent'      => Illuminate\Database\Eloquent\Model::class,
-    'Event'         => Illuminate\Support\Facades\Event::class,
-    'File'          => Illuminate\Support\Facades\File::class,
-    'Gate'          => Illuminate\Support\Facades\Gate::class,
-    'Hash'          => Illuminate\Support\Facades\Hash::class,
-    'Http'          => Illuminate\Support\Facades\Http::class,
-    'Lang'          => Illuminate\Support\Facades\Lang::class,
-    'Log'           => Illuminate\Support\Facades\Log::class,
-    'Mail'          => Illuminate\Support\Facades\Mail::class,
-    'Notification'  => Illuminate\Support\Facades\Notification::class,
-    'Password'      => Illuminate\Support\Facades\Password::class,
-    'Queue'         => Illuminate\Support\Facades\Queue::class,
-    'Redirect'      => Illuminate\Support\Facades\Redirect::class,
-    'Redis'         => Illuminate\Support\Facades\Redis::class,
-    'Request'       => Illuminate\Support\Facades\Request::class,
-    'Response'      => Illuminate\Support\Facades\Response::class,
-    'Route'         => Illuminate\Support\Facades\Route::class,
-    'Schema'        => Illuminate\Support\Facades\Schema::class,
-    'Session'       => Illuminate\Support\Facades\Session::class,
-    'Storage'       => Illuminate\Support\Facades\Storage::class,
-    'Str'           => Illuminate\Support\Str::class,
-    'URL'           => Illuminate\Support\Facades\URL::class,
-    'Validator'     => Illuminate\Support\Facades\Validator::class,
-    'View'          => Illuminate\Support\Facades\View::class,
-  ];
+    $alias_arr = [
+      'App'           => Illuminate\Support\Facades\App::class,
+      'Arr'           => Illuminate\Support\Arr::class,
+      'Artisan'       => Illuminate\Support\Facades\Artisan::class,
+      'Auth'          => Illuminate\Support\Facades\Auth::class,
+      'Blade'         => Illuminate\Support\Facades\Blade::class,
+      'Broadcast'     => Illuminate\Support\Facades\Broadcast::class,
+      'Bus'           => Illuminate\Support\Facades\Bus::class,
+      'Cache'         => Illuminate\Support\Facades\Cache::class,
+      'Config'        => Illuminate\Support\Facades\Config::class,
+      'Cookie'        => Illuminate\Support\Facades\Cookie::class,
+      'Crypt'         => Illuminate\Support\Facades\Crypt::class,
+      'DB'            => Illuminate\Support\Facades\DB::class,
+      'Eloquent'      => Illuminate\Database\Eloquent\Model::class,
+      'Event'         => Illuminate\Support\Facades\Event::class,
+      'File'          => Illuminate\Support\Facades\File::class,
+      'Gate'          => Illuminate\Support\Facades\Gate::class,
+      'Hash'          => Illuminate\Support\Facades\Hash::class,
+      'Http'          => Illuminate\Support\Facades\Http::class,
+      'Lang'          => Illuminate\Support\Facades\Lang::class,
+      'Log'           => Illuminate\Support\Facades\Log::class,
+      'Mail'          => Illuminate\Support\Facades\Mail::class,
+      'Notification'  => Illuminate\Support\Facades\Notification::class,
+      'Password'      => Illuminate\Support\Facades\Password::class,
+      'Queue'         => Illuminate\Support\Facades\Queue::class,
+      'Redirect'      => Illuminate\Support\Facades\Redirect::class,
+      'Redis'         => Illuminate\Support\Facades\Redis::class,
+      'Request'       => Illuminate\Support\Facades\Request::class,
+      'Response'      => Illuminate\Support\Facades\Response::class,
+      'Route'         => Illuminate\Support\Facades\Route::class,
+      'Schema'        => Illuminate\Support\Facades\Schema::class,
+      'Session'       => Illuminate\Support\Facades\Session::class,
+      'Storage'       => Illuminate\Support\Facades\Storage::class,
+      'Str'           => Illuminate\Support\Str::class,
+      'URL'           => Illuminate\Support\Facades\URL::class,
+      'Validator'     => Illuminate\Support\Facades\Validator::class,
+      'View'          => Illuminate\Support\Facades\View::class,
+    ];
 
-  $module_folders = array_map(function ($dir) {
-    return basename($dir);
-  }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
+    $module_folders = array_map(function ($dir) {
+      return basename($dir);
+    }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
 
-  foreach ($module_folders as $folder) {
-    $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/app_alias.php';
-    if (file_exists($filepath)) {
-      $temp_arr = include($filepath);
-      if (is_array($temp_arr)) {
-        $alias_arr = array_merge($alias_arr, $temp_arr);
+    foreach ($module_folders as $folder) {
+      $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/app_alias.php';
+      if (file_exists($filepath)) {
+        $temp_arr = include($filepath);
+        if (is_array($temp_arr)) {
+          $alias_arr = array_merge($alias_arr, $temp_arr);
+        }
       }
     }
-  }
 
-  return $alias_arr;
+    return $alias_arr;
+  }
 }
 
-function return_providers() {
-  $app_root = base_path();
+if (!function_exists('return_providers')) {
+  function return_providers() {
+    $app_root = base_path();
 
-  $provider_arr = [
-    Illuminate\Auth\AuthServiceProvider::class,
-    Illuminate\Broadcasting\BroadcastServiceProvider::class,
-    Illuminate\Bus\BusServiceProvider::class,
-    Illuminate\Cache\CacheServiceProvider::class,
-    Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-    Illuminate\Cookie\CookieServiceProvider::class,
-    Illuminate\Database\DatabaseServiceProvider::class,
-    Illuminate\Encryption\EncryptionServiceProvider::class,
-    Illuminate\Filesystem\FilesystemServiceProvider::class,
-    Illuminate\Foundation\Providers\FoundationServiceProvider::class,
-    Illuminate\Hashing\HashServiceProvider::class,
-    Illuminate\Mail\MailServiceProvider::class,
-    Illuminate\Notifications\NotificationServiceProvider::class,
-    Illuminate\Pagination\PaginationServiceProvider::class,
-    Illuminate\Pipeline\PipelineServiceProvider::class,
-    Illuminate\Queue\QueueServiceProvider::class,
-    Illuminate\Redis\RedisServiceProvider::class,
-    Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
-    Illuminate\Session\SessionServiceProvider::class,
-    Illuminate\Translation\TranslationServiceProvider::class,
-    Illuminate\Validation\ValidationServiceProvider::class,
-    Illuminate\View\ViewServiceProvider::class,
+    $provider_arr = [
+      Illuminate\Auth\AuthServiceProvider::class,
+      Illuminate\Broadcasting\BroadcastServiceProvider::class,
+      Illuminate\Bus\BusServiceProvider::class,
+      Illuminate\Cache\CacheServiceProvider::class,
+      Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+      Illuminate\Cookie\CookieServiceProvider::class,
+      Illuminate\Database\DatabaseServiceProvider::class,
+      Illuminate\Encryption\EncryptionServiceProvider::class,
+      Illuminate\Filesystem\FilesystemServiceProvider::class,
+      Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+      Illuminate\Hashing\HashServiceProvider::class,
+      Illuminate\Mail\MailServiceProvider::class,
+      Illuminate\Notifications\NotificationServiceProvider::class,
+      Illuminate\Pagination\PaginationServiceProvider::class,
+      Illuminate\Pipeline\PipelineServiceProvider::class,
+      Illuminate\Queue\QueueServiceProvider::class,
+      Illuminate\Redis\RedisServiceProvider::class,
+      Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+      Illuminate\Session\SessionServiceProvider::class,
+      Illuminate\Translation\TranslationServiceProvider::class,
+      Illuminate\Validation\ValidationServiceProvider::class,
+      Illuminate\View\ViewServiceProvider::class,
 
-    /*
-     * Application Service Providers...
-     */
-    App\Providers\AppServiceProvider::class,
-    App\Providers\AuthServiceProvider::class,
-    // App\Providers\BroadcastServiceProvider::class,
-    App\Providers\EventServiceProvider::class,
-    App\Providers\RouteServiceProvider::class,
+      /*
+       * Application Service Providers...
+       */
+      App\Providers\AppServiceProvider::class,
+      App\Providers\AuthServiceProvider::class,
+      // App\Providers\BroadcastServiceProvider::class,
+      App\Providers\EventServiceProvider::class,
+      App\Providers\RouteServiceProvider::class,
 
-    /*
-     * RAPYD Service Providers...
-     */
-     App\Providers\RapydServiceProvider::class,
-     Maatwebsite\Excel\ExcelServiceProvider::class,
-     Studio\Totem\Providers\TotemServiceProvider::class,
-  ];
+      /*
+       * RAPYD Service Providers...
+       */
+       App\Providers\RapydServiceProvider::class,
+       Maatwebsite\Excel\ExcelServiceProvider::class,
+       Studio\Totem\Providers\TotemServiceProvider::class,
+    ];
 
-  $module_folders = array_map(function ($dir) {
-    return basename($dir);
-  }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
+    $module_folders = array_map(function ($dir) {
+      return basename($dir);
+    }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
 
-  foreach ($module_folders as $folder) {
-    $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/ServiceProvider.php';
-    if (file_exists($filepath)) {
-      // https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
-      // https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
-      include $filepath;
-      $class_str      = '\\Rapyd\\'.$folder.'ServiceProvider';
-      $provider_arr[] = $class_str;
+    foreach ($module_folders as $folder) {
+      $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/ServiceProvider.php';
+      if (file_exists($filepath)) {
+        // https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
+        // https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
+        include $filepath;
+        $class_str      = '\\Rapyd\\'.$folder.'ServiceProvider';
+        $provider_arr[] = $class_str;
+      }
     }
-  }
 
-  return $provider_arr;
+    return $provider_arr;
+  }
 }
 
 return [
