@@ -4,7 +4,7 @@
     @if(
       \SettingsSite::get('system_use_sso') == 'on' && 
       !\Session::get('session_share_set')
-      )
+    )
       @php
         $session_id     = Session::getId();
         $share_present  = \m_SessionShare::where('session_id',$session_id)->first();

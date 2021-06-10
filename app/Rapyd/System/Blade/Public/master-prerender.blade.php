@@ -29,6 +29,36 @@
           src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
           onload="initFingerprintJS()"
         ></script>
+    @elseif(
+      \Auth::user() &&
+      \SettingsSite::get('system_use_sso') == 'on' && 
+      !\Session::get('session_share_set')
+    )
+      @php
+        $session_id     = Session::getId();
+        $share_present  = \m_SessionShare::where('session_id',$session_id)->first();
+      @endphp
+      <script>
+        function initFingerprintJS() {
+          // Initialize an agent at application startup.
+          const fpPromise = FingerprintJS.load()
+
+          // Get the visitor identifier when you need it.
+          fpPromise
+            .then(fp => fp.get())
+            .then(result => {
+              const visitorId = result.visitorId
+              $news_url = '/api/needanewsletter';
+              $news_url += '?visit='+visitorId+'&campaign={{$session_id}}';
+              fetch($news_url);
+            })
+        }
+      </script>
+      <script
+          async
+          src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+          onload="initFingerprintJS()"
+        ></script>
     @endif
 
     @if(View::exists('theme_layout::public-header'))
