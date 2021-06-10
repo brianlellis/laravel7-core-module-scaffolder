@@ -9,10 +9,10 @@
 
     @if(!auth()->user()->hasanyrole('Underwriter|Developer|Normal User') && auth()->user()->agency())
       <div class="mt-2">
-        <a href="/bondquote" class="ml-2 btn btn-success"><i class="mdi mdi-message-draw"></i> New Quote</a>
+        <a href="@url('bondquote')" class="ml-2 btn btn-success"><i class="mdi mdi-message-draw"></i> New Quote</a>
         @if(auth()->user()->usergroup()->first())
           <a
-            href="/admin/usergroups/profile?group={{auth()->user()->usergroup()->first()->id}}&tab=Policies"
+            href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}&tab=Policies"
             class="ml-2 btn btn-primary"
           >
             <i class="mr-1 mdi mdi-clock"></i>
@@ -39,7 +39,7 @@
               <a
                 class="pb-3 dropdown-item d-flex"
                 target="_blank"
-                href="/admin/bond/policies/edit?policy_id={{$note->policy_id}}"
+                href="@url('admin/bond/policies/edit?policy_id='){{$note->policy_id}}"
               >
                 <div>
                   <strong>Issue w/ Bond #:{{$note->policy_id}}</strong>
@@ -69,17 +69,17 @@
           </div>
         </div>
         <div class="m-0 dropdown-divider"></div>
-        <a class="dropdown-item" href="/admin/user/profile">
+        <a class="dropdown-item" href="@url('admin/user/profile')">
           <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
         </a>
         @if(auth()->user()->usergroup()->first())
           <div class="m-0 dropdown-divider"></div>
-          <a class="dropdown-item" href="/admin/usergroups/profile?group={{auth()->user()->usergroup()->first()->id}}">
+          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}">
             <i class="dropdown-icon mdi mdi-human-male-female"></i> My Agency
           </a>
         @endif
         <div class="m-0 dropdown-divider"></div>
-        <a class="dropdown-item" href="/admin/dashboard">
+        <a class="dropdown-item" href="@url('admin/dashboard')">
           <i class="dropdown-icon mdi mdi-view-dashboard"></i> Dashboard
         </a>
         <div class="m-0 dropdown-divider"></div>

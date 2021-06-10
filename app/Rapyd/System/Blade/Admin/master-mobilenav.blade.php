@@ -7,7 +7,7 @@ $small_logo = SettingsSite::get('sitewide_logo_small');
             @if (!auth()->user()->hasrole('Agent'))
                 <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
                 <!-- sidebar-toggle-->
-                <a class="header-brand" href="/admin/dashboard">
+                <a class="header-brand" href="@url('admin/dashboard')">
                     <img src="{{ asset($small_logo) }}" width="100" class="mt-3" alt="logo">
                 </a>
             @endif
@@ -29,17 +29,17 @@ $small_logo = SettingsSite::get('sitewide_logo_small');
                             </div>
                         </div>
                         <div class="m-0 dropdown-divider"></div>
-                        <a class="dropdown-item" href="/admin/user/profile">
+                        <a class="dropdown-item" href="@url('admin/user/profile')">
                             <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
                         </a>
                         @if(auth()->user()->usergroup()->first())
                           <div class="m-0 dropdown-divider"></div>
-                          <a class="dropdown-item" href="/admin/usergroups/profile?group={{auth()->user()->usergroup()->first()->id}}">
+                          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}">
                             <i class="dropdown-icon mdi mdi-human-male-female"></i> My Agency
                           </a>
                           <div class="m-0 dropdown-divider"></div>
                         @endif
-                        <a class="dropdown-item" href="/admin/dashboard">
+                        <a class="dropdown-item" href="@url('admin/dashboard')">
                             <i class="dropdown-icon mdi mdi-view-dashboard"></i> Dashboard
                         </a>
                         <div class="m-0 dropdown-divider"></div>

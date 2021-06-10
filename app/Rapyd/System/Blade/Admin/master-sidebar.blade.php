@@ -6,7 +6,7 @@
   <aside class="app-sidebar">
     {{-- SIDEBAR HEADER --}}
     <div class="side-header">
-      <a class="header-brand1" href="/admin/dashboard">
+      <a class="header-brand1" href="@url('admin/dashboard')">
         <img src="@if($small_logo) {{asset($small_logo)}} @else /admin_pub/images/brand/logo.png @endif" class="header-brand-img light-logo1" alt="logo">
       </a>
       <a aria-label="Hide Sidebar" class="app-sidebar__toggle ml-auto" data-toggle="sidebar" href="#"></a>
