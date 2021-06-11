@@ -374,7 +374,9 @@ return [
                 'only' => [], // i.e. 'contact'
                 'except' => [
                   'api/rapydmail/templates/create',
-                  'api/rapydmail/templates/update'
+                  'api/rapydmail/templates/update',
+                  'api/cms/blog/store',
+                  'api/cms/page/store'
                 ], // i.e. 'admin/*'
             ],
 

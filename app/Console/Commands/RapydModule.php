@@ -135,7 +135,7 @@ class RapydModule extends Command
     return \File::isDirectory($path) ? true : false;
   }
 
-  protected function git_clone_or_pull_branch($mod_info = false, $progress_bar)
+  protected function git_clone_or_pull_branch($mod_info = false, $progress_bar = false)
   {
     $DS   = DIRECTORY_SEPARATOR;
     $git  = new \CzProject\GitPhp\Git;
