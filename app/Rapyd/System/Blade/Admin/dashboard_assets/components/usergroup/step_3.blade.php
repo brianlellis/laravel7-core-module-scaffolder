@@ -9,7 +9,7 @@
   </div>
   <div class="col-md-12">
     <p class="my-4">
-      <a href="/{{$producer_file}}" class="text-success" target="_blank">Download Producer Agreement</a>
+      <a href="@url('/'){{$producer_file}}" class="text-success" target="_blank">Download Producer Agreement</a>
     </p>
     <button type="submit" class="btn btn-block btn-primary my-4">I Agree</button>
   </div>
