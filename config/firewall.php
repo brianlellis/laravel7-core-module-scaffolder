@@ -252,7 +252,12 @@ return [
             'methods' => ['get', 'post', 'delete'],
 
             'routes' => [
-                'only' => [], // i.e. 'contact'
+                'only' => [
+                  'api/rapydmail/templates/create',
+                  'api/rapydmail/templates/update',
+                  'api/cms/blog/store',
+                  'api/cms/page/store'
+                ], // i.e. 'contact'
                 'except' => [], // i.e. 'admin/*'
             ],
 
