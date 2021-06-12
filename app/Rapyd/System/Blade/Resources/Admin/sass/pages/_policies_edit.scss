@@ -1,38 +1,4 @@
 #page_bond_policies_edit {
-  #send_manual_email_modal {
-    width: 95%;
-    height: 95vh;
-    position: fixed;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99999;
-    background: #fff;
-    padding: 2%;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px 300px rgba(0, 0, 0, 0.5);
-    display: none;
-  }
-  #send_manual_email_modal.active {
-    display: block;
-  }
-
-  #send_manual_email_modal textarea {
-    height: 30vh;
-  }
-
-  #send_manual_email_close {
-    position: fixed;
-    right: 1vw;
-    top: 1vh;
-    font-size: 1rem;
-    cursor: pointer;
-    z-index: 99999;
-    color: #fff;
-  }
-
   #policy_instance_history_modal {
     width:50vw;
     height: 70vh;

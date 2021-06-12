@@ -255,6 +255,7 @@ return [
                 'only' => [
                   'api/rapydmail/templates/create',
                   'api/rapydmail/templates/update',
+                  'api/email/manual-send',
                   'api/cms/blog/store',
                   'api/cms/page/store'
                 ], // i.e. 'contact'
@@ -380,6 +381,7 @@ return [
                 'except' => [
                   'api/rapydmail/templates/create',
                   'api/rapydmail/templates/update',
+                  'api/email/manual-send',
                   'api/cms/blog/store',
                   'api/cms/page/store'
                 ], // i.e. 'admin/*'
