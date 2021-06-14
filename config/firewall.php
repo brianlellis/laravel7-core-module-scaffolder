@@ -252,7 +252,14 @@ return [
             'methods' => ['get', 'post', 'delete'],
 
             'routes' => [
-                'only' => [], // i.e. 'contact'
+                'only' => [
+                  'api/rapydmail/templates/create',
+                  'api/rapydmail/templates/update',
+                  'api/email/manual-send',
+                  'api/cms/blog/store',
+                  'api/cms/page/store',
+                  'api/settings/site/update'
+                ], // i.e. 'contact'
                 'except' => [], // i.e. 'admin/*'
             ],
 
@@ -374,7 +381,11 @@ return [
                 'only' => [], // i.e. 'contact'
                 'except' => [
                   'api/rapydmail/templates/create',
-                  'api/rapydmail/templates/update'
+                  'api/rapydmail/templates/update',
+                  'api/email/manual-send',
+                  'api/cms/blog/store',
+                  'api/cms/page/store',
+                  'api/settings/site/update'
                 ], // i.e. 'admin/*'
             ],
 
