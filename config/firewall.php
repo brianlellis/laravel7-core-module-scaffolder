@@ -257,7 +257,8 @@ return [
                   'api/rapydmail/templates/update',
                   'api/email/manual-send',
                   'api/cms/blog/store',
-                  'api/cms/page/store'
+                  'api/cms/page/store',
+                  'api/settings/site/update'
                 ], // i.e. 'contact'
                 'except' => [], // i.e. 'admin/*'
             ],
@@ -383,7 +384,8 @@ return [
                   'api/rapydmail/templates/update',
                   'api/email/manual-send',
                   'api/cms/blog/store',
-                  'api/cms/page/store'
+                  'api/cms/page/store',
+                  'api/settings/site/update'
                 ], // i.e. 'admin/*'
             ],
 
