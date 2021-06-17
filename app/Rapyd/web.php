@@ -136,7 +136,7 @@ Route::get('{route}', function () {
             $default_blog_wrap = \DB::table('cms_content_wrappers')->where('blade_path',$blog_wrap_check->value)->first()->blade_path;
           }
         }
-      } elseif ($url_prefix && stripos($blade_data['url_path'], $url_prefix) !== false) {
+      } elseif ($url_prefix && stripos($blade_data['url_path'], $url_prefix) === false) {
         $pageslug_data = false;
       } else {
         // Check as a last option if the page is via url_slug in the CMS tables
