@@ -360,11 +360,10 @@ return [
 
             'routes' => [
                 'only' => [
-                  'api/rapydmail/templates/create',
-                  'api/rapydmail/templates/update',
+                  'api/rapydmail/templates/*',
                   'api/email/manual-send',
-                  'api/cms/blog/store',
-                  'api/cms/page/store',
+                  'api/cms/blog/*',
+                  'api/cms/page/*',
                   'api/settings/site/update'
                 ], // i.e. 'contact'
                 'except' => [], // i.e. 'admin/*'
@@ -487,11 +486,10 @@ return [
             'routes' => [
                 'only' => [], // i.e. 'contact'
                 'except' => [
-                  'api/rapydmail/templates/create',
-                  'api/rapydmail/templates/update',
+                  'api/rapydmail/templates/*',
                   'api/email/manual-send',
-                  'api/cms/blog/store',
-                  'api/cms/page/store',
+                  'api/cms/blog/*',
+                  'api/cms/page/*',
                   'api/settings/site/update'
                 ], // i.e. 'admin/*'
             ],
