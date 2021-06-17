@@ -4,7 +4,19 @@ return [
 
     'enabled' => env('FIREWALL_ENABLED', true),
 
-    'whitelist' => [env('FIREWALL_WHITELIST', '')],
+    'whitelist' => [
+      // AHREFS
+      // help.ahrefs.com/en/articles/78658-what-is-the-list-of-your-ip-ranges
+      '54.36.148.0',
+      '54.36.149.0',
+      '195.154.122.0',
+      '195.154.123.0',
+      '195.154.126.0',
+      '195.154.127.0',
+      '168.119.64.*',
+      '168.119.65.*',
+      '168.119.68.*'
+    ],
 
     'models' => [
         'user' => '\App\Models\User',
