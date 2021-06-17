@@ -46,7 +46,7 @@ return [
         'firewall.ip',
         'firewall.agent',
         'firewall.bot',
-        'firewall.geo',
+        // 'firewall.geo',
         'firewall.lfi',
         'firewall.php',
         // 'firewall.referrer',
