@@ -18,7 +18,7 @@ class EnsureEmailIsVerified
       )
     ) {
       $blade_data                       = [];
-      $blade_data['event_mail_subject'] = 'Please Confirm your email';
+      $blade_data['event_mail_subject'] = \SettingsSite::get('sitewide_title').' Please Confirm your email';
 
       \RapydMail::build_email_template(
         'system-default',
