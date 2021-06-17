@@ -33,6 +33,8 @@
   @endif
 
   {{-- OG:META TAGS FOR SOCIAL MEDIA --}}
+  <meta property="og:type"      content="website">
+  <meta property="twitter:card" content="summary_large_image">
   <meta property="og:url"       content="{{request()->url()}}">
   <meta property="twitter:url"  content="{{request()->url()}}">
   @hasSection('social_page_title')
@@ -56,6 +58,11 @@
       <meta property="og:description"       content="@yield('page_desc')">
       <meta property="twitter:description"  content="@yield('page_desc')">
     @endif
+  @endif
+
+  @hasSection('page_desc')
+    <meta property="og:image"       content="@yield('social_page_img')">
+    <meta property="twitter:image"  content="@yield('social_page_img')">
   @endif
 
   {{-- DEPENDENCY REQUIRED FOR SAVING TO PDF --}}
