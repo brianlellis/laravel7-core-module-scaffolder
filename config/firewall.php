@@ -44,8 +44,8 @@ return [
 
     'all_middleware' => [
         'firewall.ip',
-        // 'firewall.agent',
-        // 'firewall.bot',
+        'firewall.agent',
+        'firewall.bot',
         'firewall.geo',
         'firewall.lfi',
         'firewall.php',
