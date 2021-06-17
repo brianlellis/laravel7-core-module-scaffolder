@@ -90,6 +90,23 @@
           {{ $pageslug_data->meta_desc }}
         @endsection
       @endif
+      {{-- SOCIAL MEDIA META INFO --}}
+      @if($pageslug_data->social_page_title)
+        @section('social_page_title')
+          {{ $pageslug_data->social_page_title }}
+        @endsection
+      @endif
+      @if($pageslug_data->social_page_desc)
+        @section('social_page_desc')
+          {{ $pageslug_data->social_page_desc }}
+        @endsection
+      @endif
+      @if($pageslug_data->social_page_img)
+        @section('social_page_img')
+          {{ $pageslug_data->social_page_img }}
+        @endsection
+      @endif
+
 
       {{-- CONTENT OF PAGE RENDERING --}}
       @if($pageslug_data->content_wrapper_path || ($via_pageslug_type === 'blog' && $default_blog_wrap))

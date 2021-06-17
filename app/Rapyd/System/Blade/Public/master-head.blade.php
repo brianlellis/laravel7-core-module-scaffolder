@@ -14,22 +14,48 @@
        <link rel="icon" href="{{asset($favicon)}}"/>
   @endif
 
-  @if (!empty($__env->yieldContent('page_desc')))
+  @hasSection('page_desc')
     <meta name="description" content="@yield('page_desc')">
   @else
     <meta name="description" content="">
   @endif
 
-  @if (!empty($__env->yieldContent('page_author')))
+  @hasSection('page_author')
     <meta name="author" content="@yield('page_author')">
   @else
     <meta name="author" content="">
   @endif
 
-  @if (!empty($__env->yieldContent('page_title')))
-     <title>@yield('page_title')</title>
+  @hasSection('page_title')
+    <title>@yield('page_title')</title>
   @else
-      <title>{{$blade_data['page_title']}}</title>
+    <title>{{$blade_data['page_title']}}</title>
+  @endif
+
+  {{-- OG:META TAGS FOR SOCIAL MEDIA --}}
+  <meta property="og:url"       content="{{request()->url()}}">
+  <meta property="twitter:url"  content="{{request()->url()}}">
+  @hasSection('social_page_title')
+    <meta property="og:title"       content="@yield('social_page_title')">
+    <meta property="twitter:title"  content="@yield('social_page_title')">
+  @else
+    @hasSection('page_title')
+      <meta property="og:title"       content="@yield('page_title')">
+      <meta property="twitter:title"  content="@yield('page_title')">
+    @else
+      <meta property="og:title"       content="{{$blade_data['page_title']}}">
+      <meta property="twitter:title"  content="{{$blade_data['page_title']}}">
+    @endif
+  @endif
+
+  @hasSection('social_page_desc')
+    <meta property="og:description"       content="@yield('social_page_desc')">
+    <meta property="twitter:description"  content="@yield('social_page_desc')">
+  @else
+    @hasSection('page_desc')
+      <meta property="og:description"       content="@yield('page_desc')">
+      <meta property="twitter:description"  content="@yield('page_desc')">
+    @endif
   @endif
 
   {{-- DEPENDENCY REQUIRED FOR SAVING TO PDF --}}
