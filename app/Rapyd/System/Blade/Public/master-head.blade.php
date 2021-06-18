@@ -17,7 +17,7 @@
   @hasSection('page_desc')
     <meta name="description" content="@yield('page_desc')">
   @else
-    <meta name="description" content="">
+    <meta name="description" content="{{\SettingsSite::get('sitewide_meta_description')}}">
   @endif
 
   @hasSection('page_author')
