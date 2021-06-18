@@ -5,7 +5,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{-- NOINDEX ON ID PORTIONS OF DETAIL PAGES --}}
+  @if(\Session::has('hascanonical'))
+    {!! \Session::get('hascanonical') !!}
+  @endif
+
   @if (strpos(url()->current(), ".com/admin") !== false)
     <meta name="robots" content="disallow" />
   @endif
