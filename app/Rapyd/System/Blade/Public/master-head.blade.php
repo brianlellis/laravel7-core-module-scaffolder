@@ -64,8 +64,8 @@
     <meta property="og:image"       content="@yield('social_page_img')">
     <meta property="twitter:image"  content="@yield('social_page_img')">
   @else
-    <meta property="og:image"       content="{{\SettingsSite::get('sitewide_logo_large')}}">
-    <meta property="twitter:image"  content="{{\SettingsSite::get('sitewide_logo_large')}}">
+    <meta property="og:image"       content="@url()/{{\SettingsSite::get('sitewide_logo_large')}}">
+    <meta property="twitter:image"  content="@url()/{{\SettingsSite::get('sitewide_logo_large')}}">
   @endif
 
   {{-- DEPENDENCY REQUIRED FOR SAVING TO PDF --}}
