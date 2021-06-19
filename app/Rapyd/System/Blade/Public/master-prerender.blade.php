@@ -32,7 +32,10 @@
           onload="initFingerprintJS()"
         ></script>
     @elseif(!\Session::get('session_share_set'))
-      <script>
+    {{-- 
+      GREP FIX: THIS IS FORCING A CONSTANT PAGE RELOAD 
+    --}}
+  {{--     <script>
         function initFingerprintJS() {
           // Initialize an agent at application startup.
           const fpPromise = FingerprintJS.load()
@@ -58,7 +61,7 @@
           async
           src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
           onload="initFingerprintJS()"
-        ></script>
+        ></script> --}}
     @endif
 
     @if(View::exists('theme_layout::public-header'))
@@ -109,16 +112,23 @@
 
 
       {{-- CONTENT OF PAGE RENDERING --}}
-      @if($pageslug_data->content_wrapper_path || ($via_pageslug_type === 'blog' && $default_blog_wrap))
-          @include('theme_wrapper::'.$pageslug_data->content_wrapper_path ?? $default_blog_wrap, [
-            'inner_content' => $compiled_view_data
-          ])
+      @if(
+        $pageslug_data->content_wrapper_path || 
+        ($via_pageslug_type === 'blog' && $default_blog_wrap)
+      )
+        @include(
+          'theme_wrapper::'.$pageslug_data->content_wrapper_path ?? $default_blog_wrap, 
+          ['inner_content' => $compiled_view_data]
+        )
       @else
         {!! $compiled_view_data !!}
       @endif
     @else
+      @php
+        $view_lookup = str_replace('theme::', '', $view_lookup);
+      @endphp
       @include('rapyd_admin::fallback', [
-          'blade_lookup' => str_replace('theme::', '', $view_lookup),
+          'blade_lookup' => $view_lookup,
           'data' => [
             "fallback"              => $fallback ?? false,
             "account_summaries"     => $account_summaries ?? false,
