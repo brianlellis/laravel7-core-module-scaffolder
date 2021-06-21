@@ -117,29 +117,55 @@ Route::get('{route}', function () {
       $view_lookup = 'theme::'.$blade_data['blade_val'];
     } elseif(View::exists('theme::'.$blade_data['blade_val'])) {
       $view_lookup = 'theme::'.$blade_data['blade_val'];
-    } elseif(View::exists('theme::'.$without_slug) && !m_CmsPage::where('url_slug', $cms_slug)->first()) {
+    } elseif(View::exists('theme::'.$without_slug) && !\m_CmsPage::where('url_slug', $cms_slug)->first()) {
       $view_lookup = 'theme::'.$without_slug;
     } else {
       // Make sure blog post prefix isn't enabled in settings
       $url_prefix = \SettingsSite::get('cms_blog_post_prefix');
+      if ($url_prefix && stripos($blade_data['url_path'], $url_prefix) !== false) {
+        $url_check = str_replace($url_prefix."/", "", $blade_data['url_path']);
 
-      $url_check = $url_prefix ? str_replace($url_prefix."/", "", $blade_data['url_path']) : $blade_data['url_path'];
+        // Check as a last option if the page is via url_slug in the CMS tables
+        // NOTE: 1 - BlogPost, 2 - CMS Page via Laraberg
+        $pageslug_data = \Cache::rememberForever(env('APP_DOMAIN')."cmspost_{$url_check}", 
+          function() use($url_check) {
+            return \Rapyd\Model\CmsBlogPost::where('url_slug', $url_check)->first();
+          });
 
-      // Check as a last option if the page is via url_slug in the CMS tables
-      // NOTE: 1 - BlogPost, 2 - CMS Page via Laraberg
-      $pageslug_data = \Rapyd\Model\CmsBlogPost::where('url_slug', $url_check)->first();
-      if ($pageslug_data) {
-        // Check for default blog wrap value
-        $blog_wrap_check = \DB::table('settings_site')->where('id', 'cms_blog_post_default_wrap')->first();
-        if ($blog_wrap_check && $blog_wrap_check->value) {
-          $via_pageslug_type = 'blog';
-          $default_blog_wrap = \DB::table('cms_content_wrappers')->where('blade_path',$blog_wrap_check->value)->first()->blade_path;
+        if ($pageslug_data) {
+          // Check for default blog wrap value
+          $blog_wrap_check = \DB::table('settings_site')->where('id', 'cms_blog_post_default_wrap')->first();
+          if ($blog_wrap_check && $blog_wrap_check->value) {
+            $via_pageslug_type = 'blog';
+            $default_blog_wrap = \DB::table('cms_content_wrappers')->where('blade_path',$blog_wrap_check->value)->first()->blade_path;
+          }
+        }
+      } elseif ($url_prefix && stripos($blade_data['url_path'], $url_prefix) === false) {
+        $pageslug_data = false;
+      } else {
+        // Check as a last option if the page is via url_slug in the CMS tables
+        // NOTE: 1 - BlogPost, 2 - CMS Page via Laraberg
+        $pageslug_data = \Cache::rememberForever(env('APP_DOMAIN')."cmspost_{$url_check}", 
+          function() use($url_check) {
+            return \Rapyd\Model\CmsBlogPost::where('url_slug', $url_check)->first();
+          });
+
+        if ($pageslug_data) {
+          // Check for default blog wrap value
+          $blog_wrap_check = \DB::table('settings_site')->where('id', 'cms_blog_post_default_wrap')->first();
+          if ($blog_wrap_check && $blog_wrap_check->value) {
+            $via_pageslug_type = 'blog';
+            $default_blog_wrap = \DB::table('cms_content_wrappers')->where('blade_path',$blog_wrap_check->value)->first()->blade_path;
+          }
         }
       }
 
       if (!$pageslug_data) {
         $url_check = $blade_data['url_path'];
-        $pageslug_data = \Rapyd\Model\CmsPage::where('url_slug', $url_check)->first();
+        $pageslug_data = \Cache::rememberForever(env('APP_DOMAIN')."cmspage_{$url_check}", 
+          function() use($url_check) {
+            return \Rapyd\Model\CmsPage::where('url_slug', $url_check)->first();
+          });
 
         // Check for response header override
         if ($pageslug_data && $pageslug_data->header_response_override) {

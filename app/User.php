@@ -189,17 +189,4 @@ class User extends Authenticatable implements MustVerifyEmail
 			}
 		}
   }
-
-  public function create_avatar()
-  {
-    $str = \Str::lower($this->name_first . '' . $this->name_last . $this->id);
-    $avatar = new Avatar();
-    $avatar->create($this->name_first . ' ' . $this->name_last)
-      ->setBackground('#0092e0')
-      ->setBorder(1, '#0092e0')
-      ->setDimension(200, 200)
-      ->setFontSize(100)
-      ->save('user/avatar/' . $str . '.png', $quality = 100);
-    $this->update(['avatar' => 'user/avatar/' . $str . '.png']);
-  }
 }

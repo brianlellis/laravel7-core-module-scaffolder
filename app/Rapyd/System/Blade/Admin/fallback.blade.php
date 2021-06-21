@@ -1,4 +1,11 @@
 {{-- REQUEST DATA FIRST THEN PASSED BLADE DATA --}}
+{{-- 
+  IMPORTANT NOTES
+
+  REQUIRED: Session::flash('request_blade_data', $request_data)
+  This is so the system doesn't continually try to evaluate the variables
+  while processing all of the bond templates
+--}}
 @php
   if (!Session::get('request_blade_data')) {
     // Policy
@@ -97,8 +104,6 @@
         'selected_bond'         => $selected_bond,
         'states'                => \m_BondLibraryState::orderBy('full')->get(),
       ];
-
-      Session::flash('request_blade_data', $request_data);
     } else {
       // Select Bond
       if ($bond_select_id = Request::get('bond_selected')) {
@@ -129,7 +134,29 @@
   } else {
     $request_data = Session::get('request_blade_data');
   }
+@endphp
 
+@php
+  $request_data = [
+    'fallback'              => 'rapyd_admin::fallback',
+    'account_summaries'     => null,
+    'agent_selected_id'     => $agent_selected_id ?? null,
+    'bond_select_id'        => $bond_select_id ?? null,
+    'invoice'               => null,
+    'policy'                => null,
+    'policy_action_date'    => null,
+    'policy_agency'         => null,
+    'policy_agent'          => null,
+    'policy_business'       => null,
+    'policy_last_action'    => null,
+    'policy_quotes_auto'    => null,
+    'policy_quotes_manual'  => null,
+    'search_data'           => $search_data ?? null,
+    'search_term'           => $search_term ?? null,
+    'selected_agent'        => $selected_agent ?? null,
+    'selected_bond'         => $selected_bond ?? null,
+    'states'                => \m_BondLibraryState::orderBy('full')->get(),
+  ];
   // CMS NEEDS AND PUBLIC TEMPLATE NEEDS
   if ($data ?? false) {
     foreach ($data as $key => $value) {
@@ -140,10 +167,8 @@
   if ($inner_content = Session::get('request_inner_content')) {
     $data['inner_content'] = $inner_content;
   }
-@endphp
 
-{{-- PRIORITY OF LOAD: 1-Theme, 2-Module, 3-Core System --}}
-@php
+  // PRIORITY OF LOAD: 1-Theme, 2-Module, 3-Core System 
   $use_public_master = ($data['use_public_master'] ?? false) ? true : false;
 @endphp
 
