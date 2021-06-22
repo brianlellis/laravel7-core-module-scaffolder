@@ -56,7 +56,7 @@ class User extends Authenticatable implements MustVerifyEmail
 	// THIS IS REFERENCING A JOIN TABLE
 	public function policies()
 	{
-		return $this->belongsToMany(BondPolicies::class, 'bond_policy_principals');
+		return $this->belongsToMany(BondPolicies::class);
 	}
 
 	public function usergroup()
