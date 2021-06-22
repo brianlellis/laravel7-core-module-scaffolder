@@ -53,6 +53,12 @@ class User extends Authenticatable implements MustVerifyEmail
 		'email_verified_at' => 'datetime',
 	];
 
+	// THIS IS REFERENCING A JOIN TABLE
+	public function policies()
+	{
+		return $this->belongsToMany(BondPolicies::class, 'bond_policy_principals');
+	}
+
 	public function usergroup()
 	{
 		return $this->belongsToMany(Usergroups::class, 'usergroup_users', 'user_id', 'usergroup_id');
