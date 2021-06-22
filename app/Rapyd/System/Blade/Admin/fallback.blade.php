@@ -55,12 +55,10 @@
 
       // POLICY AGENT AND AGENCY
       if (!$policy_agent = $policy->agent) {
-        $policy_agent_id  = \SettingsSite::get('system_policy_default_agent');
-        $policy_agent     = \App\User::find($policy_agent_id);
-        if (!$policy_agency = $policy_agent->agency()) {
-          $default_agency_id  = \SettingsSite::get('system_policy_default_usergroup');
-          $policy_agency      = $policy_agent->agency($default_agency_id);
-        }
+        $policy_agent_id    = \SettingsSite::get('system_policy_default_agent');
+        $policy_agent       = \App\User::find($policy_agent_id);
+        $default_agency_id  = \SettingsSite::get('system_policy_default_usergroup');
+        $policy_agency      = $policy_agent->agency($default_agency_id);
       } elseif (!$policy_agency = $policy_agent->agency()) {
         $default_agency_id  = \SettingsSite::get('system_policy_default_usergroup');
         $policy_agency      = $policy_agent->agency($default_agency_id);
