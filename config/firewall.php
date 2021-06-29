@@ -418,7 +418,7 @@ return [
 
             'routes' => [
                 'only' => [], // i.e. 'contact'
-                'except' => [], // i.e. 'admin/*'
+                'except' => ['admin/*'], // i.e. 'admin/*'
             ],
 
             'inputs' => [
