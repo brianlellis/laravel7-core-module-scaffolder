@@ -173,7 +173,7 @@ return [
 
             'routes' => [
                 'only' => [], // i.e. 'contact'
-                'except' => [], // i.e. 'admin/*'
+                'except' => ['api/core-pdf/download-stripped'], // i.e. 'admin/*'
             ],
         ],
 
@@ -182,7 +182,7 @@ return [
 
             'routes' => [
                 'only' => [], // i.e. 'contact'
-                'except' => [], // i.e. 'admin/*'
+                'except' => ['api/core-pdf/download-stripped'], // i.e. 'admin/*'
             ],
 
             // https://github.com/jenssegers/agent
