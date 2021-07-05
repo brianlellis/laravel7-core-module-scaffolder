@@ -1,6 +1,5 @@
 @php
-  use Rapyd\Model\PolicyHistory;
-  $history        = PolicyHistory::all_pinned();
+  $history = \m_PolicyHistory::all_pinned();
 @endphp
 
 <div class="page-header {{ auth()->user()->hasrole('Agent') ? 'agent-page-header' : null }}">
@@ -25,7 +24,7 @@
   <div id="navbar_right_dropdown" class="ml-auto d-flex header-right-icons header-search-icon">
     {{-- NOTIFICATIONS --}}
     {{-- FIX GREP (ASSIGN PROPER USER ROLES/PERMISSIONS) --}}
-    @if(auth()->user()->hasanyrole('Developer') && auth()->user()->agency())
+    @if(auth()->user()->hasanyrole('Developer') || auth()->user()->agency())
       <div class="dropdown d-sm-flex notifications">
         <a class="nav-link icon" data-toggle="dropdown">
           <i class="fe fe-bell"></i>
