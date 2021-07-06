@@ -59,7 +59,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
       // 'web','throttle:40|150,1','firewall.all'
-        Route::middleware('web','throttle:60|80,1','firewall.all')
+        Route::middleware('web','throttle:150|150,1','firewall.all')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
