@@ -8,6 +8,9 @@ return [
   'policy_quote' => [
     'group_label'      => 'BondPolicy',
   ],
+  'policy_no_auto_quote' => [
+    'group_label'      => 'BondPolicy',
+  ],
   'policy_issued' => [
     'group_label'      => 'BondPolicy',
   ],
