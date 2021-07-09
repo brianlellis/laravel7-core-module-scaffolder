@@ -68,5 +68,10 @@ return [
   // EMAIL
   'bondquote_complete_application' => [
     'group_label'      => 'BondPolicy',
+  ],
+
+  // SAA
+  'policy_saa_removed' => [
+    'group_label'      => 'BondPolicy',
   ]
 ];
