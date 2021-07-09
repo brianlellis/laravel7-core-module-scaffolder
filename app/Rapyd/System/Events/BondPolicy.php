@@ -23,6 +23,9 @@ return [
   'policy_renewed' => [
     'group_label'      => 'BondPolicy',
   ],
+  'policy_reinstatement' => [
+    'group_label'      => 'BondPolicy',
+  ],
 
   // PAYMENTS
   'policy_payment_method_added' => [
