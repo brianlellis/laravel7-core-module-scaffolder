@@ -95,5 +95,16 @@ return [
   ],
   'policy_saa_removed' => [
     'group_label'      => 'BondPolicy',
-  ]
+  ],
+
+  // SURETY
+  'policy_surety_co_created' => [
+    'group_label'      => 'BondPolicy',
+  ],
+  'policy_surety_co_updated' => [
+    'group_label'      => 'BondPolicy',
+  ],
+  'policy_surety_co_removed' => [
+    'group_label'      => 'BondPolicy',
+  ],
 ];
