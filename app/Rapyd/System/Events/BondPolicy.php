@@ -67,6 +67,11 @@ return [
     'group_label'      => 'BondPolicy',
   ],
 
+  // History
+  'policy_history_added' => [
+    'group_label'      => 'BondPolicy',
+  ],
+
   // Bond Numbers
   'policy_bondnumber_created' => [
     'group_label'      => 'BondPolicy',
