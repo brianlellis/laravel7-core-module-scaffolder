@@ -11,9 +11,6 @@ return [
   'policy_no_auto_quote' => [
     'group_label'      => 'BondPolicy',
   ],
-  'policy_bondnumber_removed' => [
-    'group_label'      => 'BondPolicy',
-  ],
   'policy_issued' => [
     'group_label'      => 'BondPolicy',
   ],
@@ -67,6 +64,17 @@ return [
 
   // EMAIL
   'bondquote_complete_application' => [
+    'group_label'      => 'BondPolicy',
+  ],
+
+  // Bond Numbers
+  'policy_bondnumber_created' => [
+    'group_label'      => 'BondPolicy',
+  ],
+  'policy_bondnumber_updated' => [
+    'group_label'      => 'BondPolicy',
+  ],
+  'policy_bondnumber_removed' => [
     'group_label'      => 'BondPolicy',
   ],
 
