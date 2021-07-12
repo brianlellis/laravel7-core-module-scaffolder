@@ -10,4 +10,7 @@ return [
   'experian_credentials_bad' => [
     'group_label'      => 'Experian',
   ],
+  'experian_no_valid_report' => [
+    'group_label'      => 'Experian',
+  ],
 ];
