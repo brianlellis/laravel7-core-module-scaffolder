@@ -28,4 +28,7 @@ return [
   'authnet_error_transaction'    => [
     'group_label'      => 'Authnet',
   ],
+  'authnet_error_remove_profile'    => [
+    'group_label'      => 'Authnet',
+  ],
 ];
