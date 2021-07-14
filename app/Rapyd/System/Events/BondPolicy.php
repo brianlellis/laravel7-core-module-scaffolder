@@ -64,6 +64,9 @@ return [
   'policy_file_added' => [
     'group_label'      => 'BondPolicy',
   ],
+  'policy_custom_report' => [
+    'group_label'      => 'BondPolicy',
+  ],
 
   // EMAIL
   'bondquote_complete_application' => [
