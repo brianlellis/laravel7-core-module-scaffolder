@@ -80,13 +80,13 @@ return [
 
   // Bond Numbers
   'policy_bondnumber_created' => [
-    'group_label'      => 'BondPolicy',
+    'group_label'      => 'BondNumber',
   ],
   'policy_bondnumber_updated' => [
-    'group_label'      => 'BondPolicy',
+    'group_label'      => 'BondNumber',
   ],
   'policy_bondnumber_removed' => [
-    'group_label'      => 'BondPolicy',
+    'group_label'      => 'BondNumber',
   ],
 
   // SURETY
