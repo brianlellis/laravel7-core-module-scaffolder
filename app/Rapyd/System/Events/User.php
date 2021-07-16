@@ -22,22 +22,22 @@ return [
 	],
 	// GROUPS
 	'user_group_added_to' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 	'user_group_removed_from' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 	'user_group_created' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 	'user_group_updated' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 	'user_group_removed' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 	'user_group_deactivated' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 
 	// SYSTEM NOTIFICATIONS
