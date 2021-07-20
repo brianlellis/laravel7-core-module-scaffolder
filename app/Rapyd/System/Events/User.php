@@ -22,10 +22,22 @@ return [
 	],
 	// GROUPS
 	'user_group_added_to' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
 	],
 	'user_group_removed_from' => [
-		'group_label'      => 'User',
+		'group_label'      => 'Usergroup',
+	],
+	'user_group_created' => [
+		'group_label'      => 'Usergroup',
+	],
+	'user_group_updated' => [
+		'group_label'      => 'Usergroup',
+	],
+	'user_group_removed' => [
+		'group_label'      => 'Usergroup',
+	],
+	'user_group_deactivated' => [
+		'group_label'      => 'Usergroup',
 	],
 
 	// SYSTEM NOTIFICATIONS
@@ -43,5 +55,19 @@ return [
   ],
   'user_suggestion' => [
     'group_label'  => 'User'
-  ]
+  ],
+
+  // Experian
+  'experian_account_invalid' => [
+    'group_label'      => 'User',
+  ],
+  'experian_invalid_user_info' => [
+    'group_label'      => 'User',
+  ],
+  'experian_credentials_bad' => [
+    'group_label'      => 'User',
+  ],
+  'experian_no_valid_report' => [
+    'group_label'      => 'User',
+  ],
 ];
