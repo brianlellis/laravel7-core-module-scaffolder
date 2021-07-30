@@ -27,8 +27,8 @@
     </strong></p>
 
     {{$obligee['name']}}<br>
-    {{$obligee['address_street']}}<br />
-    {{$obligee['address_city']}}, {{$obligee['address_state']}} {{$obligee['address_zip']}}
+    {{$obligee['address']}}<br />
+    {{$obligee['city']}}, {{$obligee['state']}} {{$obligee['zip']}}
   </div>
 
   {{-- PRINCIPAL INFO --}}
