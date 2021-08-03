@@ -54,10 +54,7 @@
     <div class="dropdown d-md-flex profile-1">
       <a href="#" data-toggle="dropdown" class="pr-2 leading-none nav-link d-flex">
         <span>
-            @php
-              $avatar_path = auth()->user()->avatar ?? \SettingsSite::get('default_user_avatar');
-            @endphp
-            <img src="{{asset($avatar_path)}}" class="avatar profile-user brround cover-image" style="object-fit: cover;">
+            @useravatar
         </span>
       </a>
       <div id="dropdown_menu_wrapper" class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
