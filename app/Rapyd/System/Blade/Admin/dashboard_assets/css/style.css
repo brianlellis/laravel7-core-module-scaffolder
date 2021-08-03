@@ -18662,7 +18662,8 @@ ul.timeline > li:before {
 	clear: both;
 	margin: 7px auto
 }
-.userprofile .userpic {
+.userprofile .userpic,
+#navbar_right_dropdown .userpic {
 	height: 100px;
 	width: 100px;
 	clear: both;
@@ -18678,6 +18679,10 @@ ul.timeline > li:before {
   line-height: 100px;
   font-size:  3em;
   color:  #FFF;
+}
+#navbar_right_dropdown .userpic {
+  height:  40px;
+  width:  40px;
 }
 .userlist a:hover{
 	color:#fff;
