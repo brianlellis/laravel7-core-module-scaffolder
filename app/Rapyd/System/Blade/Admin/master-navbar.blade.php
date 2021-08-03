@@ -9,9 +9,9 @@
     @if(!auth()->user()->hasanyrole('Underwriter|Developer|Normal User') && auth()->user()->agency())
       <div class="mt-2">
         <a href="@url('bondquote')" class="ml-2 btn btn-success"><i class="mdi mdi-message-draw"></i> New Quote</a>
-        @if(auth()->user()->usergroup()->first())
+        @if(auth()->user()->usergroup())
           <a
-            href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}&tab=Policies"
+            href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->id}}&tab=Policies"
             class="ml-2 btn btn-primary"
           >
             <i class="mr-1 mdi mdi-clock"></i>
@@ -68,9 +68,9 @@
         <a class="dropdown-item" href="@url('admin/user/profile')">
           <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
         </a>
-        @if(auth()->user()->usergroup()->first())
+        @if(auth()->user()->usergroup())
           <div class="m-0 dropdown-divider"></div>
-          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}">
+          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->id}}">
             <i class="dropdown-icon mdi mdi-human-male-female"></i> My Agency
           </a>
         @endif

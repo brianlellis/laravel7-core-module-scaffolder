@@ -29,9 +29,9 @@ $small_logo = SettingsSite::get('sitewide_logo_small');
                         <a class="dropdown-item" href="@url('admin/user/profile')">
                             <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
                         </a>
-                        @if(auth()->user()->usergroup()->first())
+                        @if(auth()->user()->usergroup())
                           <div class="m-0 dropdown-divider"></div>
-                          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}">
+                          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->id}}">
                             <i class="dropdown-icon mdi mdi-human-male-female"></i> My Agency
                           </a>
                           <div class="m-0 dropdown-divider"></div>

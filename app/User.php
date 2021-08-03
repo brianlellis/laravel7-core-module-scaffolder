@@ -61,7 +61,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
 	public function usergroup()
 	{
-		return $this->belongsToMany(Usergroups::class, 'usergroup_users', 'user_id', 'usergroup_id');
+    // This is left with a many relationship as the current need is singular
+    // association but could change in the future
+		return $this->belongsToMany(Usergroups::class, 'usergroup_users', 'user_id', 'usergroup_id')->first();
 	}
 
   public function agency($agency_id=null)
