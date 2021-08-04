@@ -27,10 +27,6 @@
     </strong></p>
 
     {{$obligee['name']}}<br>
-<<<<<<< HEAD
-    {{$obligee['address']}}<br />
-    {{$obligee['city']}}, {{$obligee['state']}} {{$obligee['zip']}}
-=======
     @if (isset($obligee['address_street']))
       {{$obligee['address_street']}}<br />
     @endif
@@ -40,7 +36,6 @@
       {{$obligee['address_state']}}
     @endif
     
->>>>>>> 86ebe8f1119a54e1d2dd92b0e3dd6e97ad66fc37
   </div>
 
   {{-- PRINCIPAL INFO --}}
