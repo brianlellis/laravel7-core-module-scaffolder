@@ -18662,7 +18662,8 @@ ul.timeline > li:before {
 	clear: both;
 	margin: 7px auto
 }
-.userprofile .userpic {
+.userprofile .userpic,
+#navbar_right_dropdown .userpic {
 	height: 100px;
 	width: 100px;
 	clear: both;
@@ -18674,6 +18675,14 @@ ul.timeline > li:before {
 	-webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
 	-ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
 	position: relative;
+  background: black; 
+  line-height: 100px;
+  font-size:  3em;
+  color:  #FFF;
+}
+#navbar_right_dropdown .userpic {
+  height:  40px;
+  width:  40px;
 }
 .userlist a:hover{
 	color:#fff;

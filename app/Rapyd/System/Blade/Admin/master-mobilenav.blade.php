@@ -15,10 +15,7 @@ $small_logo = SettingsSite::get('sitewide_logo_small');
                 <div class="dropdown profile-1">
                     <a href="#" data-toggle="dropdown" class="pr-2 leading-none nav-link d-flex">
                         <span>
-                            @php
-                                $avatar_path = auth()->user()->avatar ?? \SettingsSite::get('default_user_avatar');
-                            @endphp
-                            <img src="{{ asset($avatar_path) }}" class="avatar profile-user brround cover-image" style="object-fit: cover;">
+                            @useravatar
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
@@ -32,9 +29,9 @@ $small_logo = SettingsSite::get('sitewide_logo_small');
                         <a class="dropdown-item" href="@url('admin/user/profile')">
                             <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
                         </a>
-                        @if(auth()->user()->usergroup()->first())
+                        @if(auth()->user()->usergroup())
                           <div class="m-0 dropdown-divider"></div>
-                          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}">
+                          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->id}}">
                             <i class="dropdown-icon mdi mdi-human-male-female"></i> My Agency
                           </a>
                           <div class="m-0 dropdown-divider"></div>

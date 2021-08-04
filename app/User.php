@@ -61,13 +61,20 @@ class User extends Authenticatable implements MustVerifyEmail
 
 	public function usergroup()
 	{
-		return $this->belongsToMany(Usergroups::class, 'usergroup_users', 'user_id', 'usergroup_id');
+    // This is left with a many relationship as the current need is singular
+    // association but could change in the future
+		return $this->belongsToMany(Usergroups::class, 'usergroup_users', 'user_id', 'usergroup_id')->first();
 	}
 
-  public function agency($agency_id=null)
+  public function agency()
   {
-    return $this->usergroup->where('usergroup_type_id',$agency_id ?? 2)->first();
+    $cur_usergroup = $this->usergroup();
 
+    if (!$cur_usergroup || $cur_usergroup->type->description !== 'agency') {
+      $default_agency_id  = \SettingsSite::get('system_policy_default_usergroup');
+      return Usergroups::find($default_agency_id);
+    } 
+    return $cur_usergroup;
   }
 
 	public function created_policies()
