@@ -99,4 +99,9 @@ return [
   'policy_surety_co_removed' => [
     'group_label'      => 'BondPolicy',
   ],
+
+  // RATES
+  'rate_increase'             => [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
