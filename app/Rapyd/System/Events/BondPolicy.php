@@ -110,4 +110,7 @@ return [
   'subscription_payment_declined'   => [
     'group_label'      => 'BondPolicy'
   ],
+  'subscription_policy_cancellation'=> [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
