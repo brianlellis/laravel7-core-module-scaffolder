@@ -100,8 +100,11 @@ return [
     'group_label'      => 'BondPolicy',
   ],
 
-  // RATES
-  'rate_increase'             => [
+  // SUBSCRIPTION
+  'rate_increase'                   => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'subscription_payment_declined'   => [
     'group_label'      => 'BondPolicy'
   ],
 ];
