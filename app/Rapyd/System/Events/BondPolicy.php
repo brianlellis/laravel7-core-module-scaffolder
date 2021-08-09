@@ -104,6 +104,9 @@ return [
   'rate_increase'                   => [
     'group_label'      => 'BondPolicy'
   ],
+  'rate_decrease'                   => [
+    'group_label'      => 'BondPolicy'
+  ],
   'subscription_payment_declined'   => [
     'group_label'      => 'BondPolicy'
   ],
