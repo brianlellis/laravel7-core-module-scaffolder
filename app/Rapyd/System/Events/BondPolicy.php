@@ -113,4 +113,7 @@ return [
   'subscription_policy_cancellation'=> [
     'group_label'      => 'BondPolicy'
   ],
+  'subscription_payment_received'   => [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
