@@ -116,4 +116,7 @@ return [
   'subscription_payment_received'   => [
     'group_label'      => 'BondPolicy'
   ],
+  'subscription_pending_cancellation'   => [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
