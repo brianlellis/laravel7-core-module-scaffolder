@@ -119,4 +119,7 @@ return [
   'subscription_pending_cancellation'   => [
     'group_label'      => 'BondPolicy'
   ],
+  'reinstatement_payment_received'  => [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
