@@ -106,6 +106,7 @@ if (!function_exists('return_providers')) {
        Studio\Totem\Providers\TotemServiceProvider::class,
     ];
 
+    // Consider removal based on if psr-4 autoload mechanism is reimplemented
     $module_folders = array_map(function ($dir) {
       return basename($dir);
     }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
