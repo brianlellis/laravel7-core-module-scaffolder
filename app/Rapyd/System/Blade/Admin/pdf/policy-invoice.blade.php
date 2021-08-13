@@ -27,15 +27,8 @@
     </strong></p>
 
     {{$obligee['name']}}<br>
-    @if (isset($obligee['address_street']))
-      {{$obligee['address_street']}}<br />
-    @endif
-    @if (isset($obligee['address_city']) && isset($obligee['address_state']) && isset($obligee['address_zip']))
-      {{$obligee['address_city']}}, {{$obligee['address_state']}} {{$obligee['address_zip']}}
-    @elseif (isset($obligee['address_state']))
-      {{$obligee['address_state']}}
-    @endif
-    
+    {{$obligee['address']}}<br />
+    {{$obligee['city']}}, {{$obligee['state']}} {{$obligee['zip']}}
   </div>
 
   {{-- PRINCIPAL INFO --}}

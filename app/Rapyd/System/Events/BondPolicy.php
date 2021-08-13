@@ -99,4 +99,27 @@ return [
   'policy_surety_co_removed' => [
     'group_label'      => 'BondPolicy',
   ],
+
+  // SUBSCRIPTION
+  'rate_increase'                   => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'rate_decrease'                   => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'subscription_payment_declined'   => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'subscription_policy_cancellation'=> [
+    'group_label'      => 'BondPolicy'
+  ],
+  'subscription_payment_received'   => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'subscription_pending_cancellation'   => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'reinstatement_payment_received'  => [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
