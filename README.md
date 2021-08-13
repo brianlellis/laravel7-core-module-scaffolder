@@ -24,6 +24,13 @@ Composer packages have been installed for which the system is dependent upon pri
 # FILES WHICH MAY BE MOVED IN FUTURE DATE
  * app/User.php __May be placed in Module/Users__
 
+# ADDED DIRECTORIES TO CORE LARAVEL
+ * app/Rapyd
+ * app/Rapyd/Modules
+ * app/Rapyd/System
+
+System and Modules directories have different intents. Whereas the views in the modules automatically route to a view the System Blade directories (Admin/Public) are meant high-order blade functions to facilitate the routing. The Resources directory will eventually be migrated into modules.
+
 # PERFORMANCE TESTING
 ## DO NOT COMMIT PERFORMANCE DEPENDENCIES TO CODE!!!!
 https://github.com/jkocik/laravel-profiler
