@@ -1,9 +1,9 @@
 # Rapyd
 
 # INSTALLATION SETUP
-__$ composer install__  
-__$ php artisan rapyd:theme:install__  
-__$ php artisan rapyd:module__ 
+    $ composer install
+    $ php artisan rapyd:theme:install
+    $ php artisan rapyd:module
 
 Composer packages have been installed for which the system is dependent upon prior to upgrading.  
 
