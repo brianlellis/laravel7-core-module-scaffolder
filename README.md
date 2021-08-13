@@ -3,7 +3,24 @@
 # INSTALLATION SETUP
 __$ composer install__  
 __$ php artisan rapyd:theme:install__  
-__$ php artisan rapyd:module__  
+__$ php artisan rapyd:module__ 
+
+Composer packages have been installed for which the system is dependent upon prior to upgrading 
+
+# MODIFIED CORE LARAVEL FILES FOR MODULARIZATION
+ * app/Exceptions/Handler.php
+ * app/Http/Kernel.php
+ * app/Console/Kernel.php
+ * app/Providers/RouteServiceProvider.php
+ * config/app.php
+ * config/database.php
+ * routes/web.php
+
+# MODIFIED CORE LARAVEL FILES FOR FE DEPENDENCIES
+ * webpack.mix.js
+
+# FILES WHICH MAY BE MOVED IN FUTURE DATE
+ * app/User.php __May be placed in Module/Users__
 
 # PERFORMANCE TESTING
 ## DO NOT COMMIT PERFORMANCE DEPENDENCIES TO CODE!!!!
@@ -62,4 +79,4 @@ Rapyd.props.bond_policy_quotes      = obj || false
 Rapyd.props.bond_policy_principals  = obj || false  
 Rapyd.props.policy_stepper_history  = obj || false  
   
-Rapyd.props.state_info = obj || false  
+Rapyd.props.state_info = obj || false 
