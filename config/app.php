@@ -1,5 +1,8 @@
 <?php
 
+require_once(base_path().'/app/Rapyd/Modules/System/Controllers/Providers.php');
+use Rapyd\System\Providers as RapydProviders;
+
 if (!function_exists('return_aliases')) {
   function return_aliases() {
     $app_root = base_path();
@@ -43,28 +46,13 @@ if (!function_exists('return_aliases')) {
       'View'          => Illuminate\Support\Facades\View::class,
     ];
 
-    $module_folders = array_map(function ($dir) {
-      return basename($dir);
-    }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
-
-    foreach ($module_folders as $folder) {
-      $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/app_alias.php';
-      if (file_exists($filepath)) {
-        $temp_arr = include($filepath);
-        if (is_array($temp_arr)) {
-          $alias_arr = array_merge($alias_arr, $temp_arr);
-        }
-      }
-    }
-
+    RapydProviders::aggregate_module_aliases($alias_arr);
     return $alias_arr;
   }
 }
 
 if (!function_exists('return_providers')) {
   function return_providers() {
-    $app_root = base_path();
-
     $provider_arr = [
       Illuminate\Auth\AuthServiceProvider::class,
       Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -98,30 +86,13 @@ if (!function_exists('return_providers')) {
       App\Providers\EventServiceProvider::class,
       App\Providers\RouteServiceProvider::class,
 
-      /*
-       * RAPYD Service Providers...
-       */
-       App\Providers\RapydServiceProvider::class,
-       Maatwebsite\Excel\ExcelServiceProvider::class,
-       Studio\Totem\Providers\TotemServiceProvider::class,
+      // CORE RAPYD NEEDS
+      App\Providers\RapydServiceProvider::class,
+      Maatwebsite\Excel\ExcelServiceProvider::class,
+      Studio\Totem\Providers\TotemServiceProvider::class
     ];
 
-    // Consider removal based on if psr-4 autoload mechanism is reimplemented
-    $module_folders = array_map(function ($dir) {
-      return basename($dir);
-    }, glob($app_root . '/app/Rapyd/Modules/*', GLOB_ONLYDIR));
-
-    foreach ($module_folders as $folder) {
-      $filepath = $app_root. '/app/Rapyd/Modules/'.$folder.'/ServiceProvider.php';
-      if (file_exists($filepath)) {
-        // https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
-        // https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
-        include $filepath;
-        $class_str      = '\\Rapyd\\'.$folder.'ServiceProvider';
-        $provider_arr[] = $class_str;
-      }
-    }
-
+    RapydProviders::aggregate_module_providers($provider_arr);
     return $provider_arr;
   }
 }
