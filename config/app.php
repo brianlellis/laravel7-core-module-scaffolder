@@ -87,7 +87,7 @@ if (!function_exists('return_providers')) {
       App\Providers\RouteServiceProvider::class,
 
       // CORE RAPYD NEEDS
-      App\Providers\RapydServiceProvider::class,
+      Rapyd\SystemServiceProvider::class,
       Maatwebsite\Excel\ExcelServiceProvider::class,
       Studio\Totem\Providers\TotemServiceProvider::class
     ];
