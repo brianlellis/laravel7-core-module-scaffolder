@@ -19,6 +19,7 @@ yarn-error.log
 /vendor
 /Tinker
 /resources
+/ERD_MAPS
 
 # Public
 /public/*
