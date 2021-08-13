@@ -10,13 +10,13 @@ Composer packages have been installed for which the system is dependent upon pri
 ## Resources directory is ignored in this repo as the resources is considered a theme directory of the application in contrast to containing code which the system is dependent upon to operate.
 
 # MODIFIED CORE LARAVEL FILES FOR MODULARIZATION
- * app/Exceptions/Handler.php
- * app/Http/Kernel.php
- * app/Console/Kernel.php
- * app/Providers/RouteServiceProvider.php
- * config/app.php
- * config/database.php
- * routes/web.php
+ * app/Exceptions/Handler.php __(Custom Redirect For Error Reports)__
+ * app/Http/Kernel.php __(Base Middleware Definitions)__
+ * app/Providers/RouteServiceProvider.php __(Base Middleware Definitions)__
+ * app/Console/Kernel.php __(Rapyd Modularization Need)__
+ * config/app.php __(Rapyd Modularization Need)__
+ * config/database.php __(Rapyd Modularization Need)__
+ * routes/web.php __(Rapyd Modularization Need)__
 
 # MODIFIED CORE LARAVEL FILES FOR FE DEPENDENCIES
  * webpack.mix.js
