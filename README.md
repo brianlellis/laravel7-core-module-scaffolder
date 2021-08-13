@@ -5,7 +5,9 @@ __$ composer install__
 __$ php artisan rapyd:theme:install__  
 __$ php artisan rapyd:module__ 
 
-Composer packages have been installed for which the system is dependent upon prior to upgrading 
+Composer packages have been installed for which the system is dependent upon prior to upgrading.  
+
+## Resources directory is ignored in this repo as the resources is considered a theme directory of the application in contrast to containing code which the system is dependent upon to operate.
 
 # MODIFIED CORE LARAVEL FILES FOR MODULARIZATION
  * app/Exceptions/Handler.php
