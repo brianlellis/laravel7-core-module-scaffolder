@@ -27,8 +27,8 @@
     </strong></p>
 
     {{$obligee['name']}}<br>
-    {{$obligee['address']}}<br />
-    {{$obligee['city']}}, {{$obligee['state']}} {{$obligee['zip']}}
+    {{trim($obligee['address_street'] . ' ' . $obligee['address_street_2'])}}<br />
+    {{$obligee['address_city']}}, {{$obligee['address_state']}} {{$obligee['address_zip']}}
   </div>
 
   {{-- PRINCIPAL INFO --}}
@@ -101,7 +101,7 @@
         <td style="width: 25%">
           ${{
             number_format(
-              ($accounting['premium_revenue'] + $accounting['fee_surety'] + $accounting['tax']) - 
+              ($accounting['premium_revenue'] + $accounting['fee_surety'] + $accounting['tax']) -
               $accounting['commission_agent']
             ,2)
           }}
