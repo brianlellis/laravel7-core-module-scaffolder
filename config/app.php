@@ -151,6 +151,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Current date/time of the system (useful for testing future events)
+    |--------------------------------------------------------------------------
+    | Datetime should be specified in a format 'Y-m-d H:i:s'
+    | Example: 2022-01-31 23:55:44
+    */
+    'system_test_time' => env('SYSTEM_TEST_TIME'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
     | The application locale determines the default locale that will be used

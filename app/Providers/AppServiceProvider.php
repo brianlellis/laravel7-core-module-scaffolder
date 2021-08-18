@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+      if (config('app.env') != 'production' && ($system_test_time = config('app.system_test_time'))) {
+        Carbon::setTestNow(Carbon::parse($system_test_time));
+      }
     }
 }
