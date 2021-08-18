@@ -4,7 +4,7 @@
   <span>{{ $pdf['title']}}</span><br>
   Bond #: {{ $policy['bond_number']}}<br><br>
   Surety: {{$surety['name']}}<br>
-  Issue Date: {{ $policy['date_issue']->format('m-d-Y')}}<br><br>
+  Issue Date: {{ !empty($policy['date_issue']) ? $policy['date_issue']->format('m-d-Y') : '' }}<br><br>
   &nbsp;&nbsp;&nbsp; <span>Effective Date: {{$policy['date_effective']}}</span>
   &nbsp;&nbsp;&nbsp; <span>Expiration Date: {{$policy['date_expire']}}</span>
 </h1>
@@ -250,8 +250,8 @@
           <td>{{ucfirst(request()->getHost())}}</td>
         @endif
 
-        <td>{{$policy['date_issue']->format('m-d-Y')}}</td>
-        <td>{{$policy['date_issue']->format('m-d-Y')}}</td>
+        <td>{{!empty($policy['date_issue']) ? $policy['date_issue']->format('m-d-Y') : ''}}</td>
+        <td>{{!empty($policy['date_issue']) ? $policy['date_issue']->format('m-d-Y') : ''}}</td>
         <td>
           ${{number_format($accounting['collect_by_system'] + $accounting['collect_by_agent'], 2)}}
           @if($is_agent && $accounting['fee_delivery'] > 0)
