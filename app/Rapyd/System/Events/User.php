@@ -20,6 +20,9 @@ return [
 	'user_suspended' => [
 		'group_label'      => 'User',
 	],
+	'user_password_request' => [
+		'group_label'      => 'User',
+	],
 	// GROUPS
 	'user_group_added_to' => [
 		'group_label'      => 'Usergroup',
