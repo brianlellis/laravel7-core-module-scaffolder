@@ -122,4 +122,10 @@ return [
   'reinstatement_payment_received'  => [
     'group_label'      => 'BondPolicy'
   ],
+  'subscription_policy_continue'    => [
+    'group_label'      => 'BondPolicy'
+  ],
+  'subscription_policy_optout'      => [
+    'group_label'      => 'BondPolicy'
+  ],
 ];
