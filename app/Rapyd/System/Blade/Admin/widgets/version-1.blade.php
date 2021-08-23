@@ -11,6 +11,8 @@
       border-radius: 50%;
       margin: 0 auto;
       margin-bottom: 10px;
+      overflow: hidden;
+      display: flex;
     ">
       @useravatar
     </div>
