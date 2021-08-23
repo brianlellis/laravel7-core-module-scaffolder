@@ -9,9 +9,9 @@
     @if(!auth()->user()->hasanyrole('Underwriter|Developer|Normal User') && auth()->user()->agency())
       <div class="mt-2">
         <a href="@url('bondquote')" class="ml-2 btn btn-success"><i class="mdi mdi-message-draw"></i> New Quote</a>
-        @if(auth()->user()->usergroup())
+        @if(auth()->user()->usergroup()->first())
           <a
-            href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->id}}&tab=Policies"
+            href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}&tab=Policies"
             class="ml-2 btn btn-primary"
           >
             <i class="mr-1 mdi mdi-clock"></i>
@@ -23,7 +23,11 @@
   </div>
   <div id="navbar_right_dropdown" class="ml-auto d-flex header-right-icons header-search-icon">
     {{-- NOTIFICATIONS --}}
-    {{-- FIX GREP (ASSIGN PROPER USER ROLES/PERMISSIONS) --}}
+    {{-- 
+      FIX GREP 
+        1. ASSIGN PROPER USER ROLES/PERMISSIONS
+        2. LOOK AT CACHING HTML
+    --}}
     @if(auth()->user()->hasanyrole('Developer') || auth()->user()->agency())
       <div class="dropdown d-sm-flex notifications">
         <a class="nav-link icon" data-toggle="dropdown">
@@ -54,7 +58,10 @@
     <div class="dropdown d-md-flex profile-1">
       <a href="#" data-toggle="dropdown" class="pr-2 leading-none nav-link d-flex">
         <span>
-            @useravatar
+            @php
+              $avatar_path = auth()->user()->avatar ?? \SettingsSite::get('default_user_avatar');
+            @endphp
+            <img src="{{asset($avatar_path)}}" class="avatar profile-user brround cover-image" style="object-fit: cover;">
         </span>
       </a>
       <div id="dropdown_menu_wrapper" class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
@@ -68,9 +75,9 @@
         <a class="dropdown-item" href="@url('admin/user/profile')">
           <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
         </a>
-        @if(auth()->user()->usergroup())
+        @if(auth()->user()->usergroup()->first())
           <div class="m-0 dropdown-divider"></div>
-          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->id}}">
+          <a class="dropdown-item" href="@url('admin/usergroups/profile?group='){{auth()->user()->usergroup()->first()->id}}">
             <i class="dropdown-icon mdi mdi-human-male-female"></i> My Agency
           </a>
         @endif
