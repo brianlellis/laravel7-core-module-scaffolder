@@ -23,7 +23,11 @@
   </div>
   <div id="navbar_right_dropdown" class="ml-auto d-flex header-right-icons header-search-icon">
     {{-- NOTIFICATIONS --}}
-    {{-- FIX GREP (ASSIGN PROPER USER ROLES/PERMISSIONS) --}}
+    {{-- 
+      FIX GREP 
+        1. ASSIGN PROPER USER ROLES/PERMISSIONS
+        2. LOOK AT CACHING HTML
+    --}}
     @if(auth()->user()->hasanyrole('Developer') || auth()->user()->agency())
       <div class="dropdown d-sm-flex notifications">
         <a class="nav-link icon" data-toggle="dropdown">
