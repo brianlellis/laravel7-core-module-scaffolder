@@ -1,7 +1,19 @@
 <div style="width: 280px; height: 400px; margin: 0; font-family: Arial, sans-serif; font-size: 14px; border-radius: 5px; background: #FBFBFB; box-shadow: 0 10px 20px rgba(21, 21, 21, 0.19), 0 6px 6px rgba(21, 21, 21, 0.23); cursor: pointer; padding-bottom: 10px;">
   <div style="text-align:center; padding-top: 10px">
-    <p style="font-weight: 700">Agency Name</p> 
-    @useravatar
+    <p style="font-weight: 700">Agency Name</p>
+    <div style="
+      background: black;
+      color: white;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      font-size: 40px;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    ">
+      @useravatar
+    </div>
   </div> 
   <a style="border: 0; background: #238FE7; color: #FBFBFB; padding: 8px 5%; border-radius: 3px; display: inline-block; text-align: center; width: 80%; margin: auto 10% 20px 10%;"> Click to Get a Quote Now! </a>
   <div>
