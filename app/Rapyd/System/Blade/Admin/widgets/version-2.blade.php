@@ -1,6 +1,24 @@
 <div style="width: 280px; height: 450px; margin: 0; font-family: Arial, sans-serif; font-size: 14px; border-radius: 5px; background: #EDEDED; box-shadow: 0 10px 20px rgba(21, 21, 21, 0.19), 0 6px 6px rgba(21, 21, 21, 0.23); cursor: pointer;">
   <div style="text-align:center; padding-top: 10px">
-    <p style="font-weight: 700">Agency Name</p>@useravatar <img style="width: 70%; margin: auto;" src="https://i.ibb.co/HzB2gCZ/Screen-Shot-2020-12-09-at-10-13-15-AM.png"></div> <a style="border: 0; background: #238FE7; color: #FBFBFB; padding: 8px 5%; border-radius: 3px; display: inline-block; text-align: center; width: 80%; margin: auto 10% 15px 10%;"> Click to Get a Quote Now! </a>
+    <p style="font-weight: 700">Agency Name</p>
+    <div style="
+      background: black;
+      color: white;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      font-size: 40px;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      overflow: hidden;
+      display: flex;
+    ">
+        @useravatar 
+    </div>
+    <img style="width: 70%; margin: auto;" src="https://i.ibb.co/HzB2gCZ/Screen-Shot-2020-12-09-at-10-13-15-AM.png">
+  </div> 
+  <a style="border: 0; background: #238FE7; color: #FBFBFB; padding: 8px 5%; border-radius: 3px; display: inline-block; text-align: center; width: 80%; margin: auto 10% 15px 10%;"> Click to Get a Quote Now! </a>
   <div>
     <div style="width: 90%; margin: auto;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="color: #15232C; width: 13px; display:inline-block; margin-right: 5px;">

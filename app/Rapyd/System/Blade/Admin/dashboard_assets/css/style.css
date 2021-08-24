@@ -18681,8 +18681,11 @@ ul.timeline > li:before {
   color:  #FFF;
 }
 #navbar_right_dropdown .userpic {
-  height:  40px;
-  width:  40px;
+  height:       40px;
+  width:        40px;
+  line-height:  40px;
+  font-size:    2em;
+  text-align:   center;
 }
 .userlist a:hover{
 	color:#fff;

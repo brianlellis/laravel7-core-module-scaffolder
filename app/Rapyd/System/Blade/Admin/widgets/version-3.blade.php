@@ -1,7 +1,21 @@
 <div style="width: 280px; height: 400px; margin: 0; font-family: Arial, sans-serif; font-size: 14px; border-radius: 5px; background: #EDEDED; box-shadow: 0 10px 20px rgba(21, 21, 21, 0.19), 0 6px 6px rgba(21, 21, 21, 0.23); cursor: pointer;">
   <div style="text-align:center; padding-top: 10px; background: url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80); background-size: cover;">
     {{-- GREP FIX: New Controller Strategy Break This Design --}}
-    {{-- <div style="height: 100px; width: 100px; margin: 0 auto 10px auto; border-radius: 50%; background: url('/{{$avatar_path}}'); background-size: cover; background-position: center;"></div> --}}
+    <div style="
+      background: black;
+      color: white;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      font-size: 40px;
+      border-radius: 50%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      overflow: hidden;
+      display: flex;
+    ">
+        @useravatar 
+    </div>
     <p style="font-weight: 700; font-size: 24px; color: #FFF; background: rgba(0,0,0,1); padding: 10px 0; margin-top: 0;">Agency Name</p>
   </div>
   <div style="margin-top: 20px;">
