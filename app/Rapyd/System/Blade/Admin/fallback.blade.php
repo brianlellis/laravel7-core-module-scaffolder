@@ -20,13 +20,11 @@
       foreach ($result as $key => $bond) {
         $bond_result  = $bond->indexable;
         $check_me     = \BondLibrary::exclusion_check($bond_result);
-        
+
         if ($check_me) {
           $search_data->push($bond_result);
         }
       }
-
-      dd($search_data, $result);
     } elseif($search_term = Request::get('searchobligee')) {
       $search      = new \Swis\Laravel\Fulltext\Search();
       $search_data = $search->runForClass($search_term, \Rapyd\Model\BondLibraryObligee::class);
